@@ -1,0 +1,207 @@
+*** RECORDING REQ ***
+TestCase: BASELINE_DATE_AND_AMOUNT_MISMATCH
+Doc: DEED-TRUST-0042
+County: S. Clara  |  State: CA
+Date Signed: 2024-01-15
+Date Recorded: 2024-01-10
+Grantor:  T.E.S.L.A. Holdings LLC
+Grantee:  John  &  Sarah  Connor
+Amount: $1,250,000.00 (One Million Two Hundred Thousand Dollars)
+APN: 992-001-XA
+Status: PRELIMINARY
+*** END ***
+
+*** RECORDING REQ ***
+TestCase: REQUIRED_AMOUNT_LABEL_ABSENT
+Doc: DEED-0003
+County: Santa Clara | State: CA
+Date Signed: 2024-01-01
+Date Recorded: 2024-01-02
+Grantor: Example LLC
+Grantee: Alice Example
+APN: 111-111-AA
+Status: FINAL
+*** END ***
+
+*** RECORDING REQ ***
+TestCase: REQUIRED_AMOUNT_PRESENT_EMPTY
+Doc: DEED-0004
+County: Santa Clara | State: CA
+Date Signed: 2024-01-01
+Date Recorded: 2024-01-02
+Grantor: Example LLC
+Grantee: Alice Example
+Amount:
+APN: 111-111-AB
+Status: FINAL
+*** END ***
+
+*** RECORDING REQ ***
+TestCase: COUNTY_UNKNOWN
+Doc: DEED-0005
+County: Xyzzyville | State: CA
+Date Signed: 2024-01-01
+Date Recorded: 2024-01-02
+Grantor: Example LLC
+Grantee: Alice Example
+Amount: $100,000.00 (One Hundred Thousand Dollars)
+APN: 111-111-AC
+Status: FINAL
+*** END ***
+
+*** RECORDING REQ ***
+TestCase: COUNTY_PRESENT_EMPTY
+Doc: DEED-0006
+County:
+Date Signed: 2024-01-01
+Date Recorded: 2024-01-02
+Grantor: Example LLC
+Grantee: Alice Example
+Amount: $100,000.00 (One Hundred Thousand Dollars)
+APN: 111-111-AD
+Status: FINAL
+*** END ***
+
+*** RECORDING REQ ***
+TestCase: DATE_PARSE_ERROR
+Doc: DEED-0007
+County: Santa Clara | State: CA
+Date Signed: 01/15/2024
+Date Recorded: 2024-01-16
+Grantor: Example LLC
+Grantee: Alice Example
+Amount: $100,000.00 (One Hundred Thousand Dollars)
+APN: 111-111-AE
+Status: FINAL
+*** END ***
+
+*** RECORDING REQ ***
+TestCase: DATE_UNREASONABLE_TOO_OLD
+Doc: DEED-0008
+County: Santa Clara | State: CA
+Date Signed: 1800-01-01
+Date Recorded: 1800-01-02
+Grantor: Example LLC
+Grantee: Alice Example
+Amount: $100,000.00 (One Hundred Thousand Dollars)
+APN: 111-111-AF
+Status: FINAL
+*** END ***
+
+*** RECORDING REQ ***
+TestCase: DATE_UNREASONABLE_TOO_FUTURE
+Doc: DEED-0009
+County: Santa Clara | State: CA
+Date Signed: 2099-01-01
+Date Recorded: 2099-01-02
+Grantor: Example LLC
+Grantee: Alice Example
+Amount: $100,000.00 (One Hundred Thousand Dollars)
+APN: 111-111-AG
+Status: FINAL
+*** END ***
+
+*** RECORDING REQ ***
+TestCase: AMOUNT_DIGITS_PARSE_ERROR
+Doc: DEED-0010
+County: Santa Clara | State: CA
+Date Signed: 2024-01-01
+Date Recorded: 2024-01-02
+Grantor: Example LLC
+Grantee: Alice Example
+Amount: TBD (One Hundred Twenty Thousand Dollars)
+APN: 111-111-AH
+Status: FINAL
+*** END ***
+
+*** RECORDING REQ ***
+TestCase: AMOUNT_WORDS_PARSE_ERROR
+Doc: DEED-0011
+County: Santa Clara | State: CA
+Date Signed: 2024-01-01
+Date Recorded: 2024-01-02
+Grantor: Example LLC
+Grantee: Alice Example
+Amount: $120,000.00 (One Hundred Twenty Thousand Dollazzz)
+APN: 111-111-AI
+Status: FINAL
+*** END ***
+
+*** RECORDING REQ ***
+TestCase: CURRENCY_MISMATCH
+Doc: DEED-0012
+County: Santa Clara | State: CA
+Date Signed: 2024-01-01
+Date Recorded: 2024-01-02
+Grantor: Example LLC
+Grantee: Alice Example
+Amount: 100,000.00 EUR (One Hundred Thousand Dollars)
+APN: 111-111-AJ
+Status: FINAL
+*** END ***
+
+*** RECORDING REQ ***
+TestCase: AMBIGUOUS_DATE_WARNING_PLUS_FAIL
+Doc: DEED-0013
+County: Santa Clara | State: CA
+Date Signed: 2024-01-01
+Date Recorded: 2024-01-02
+Note: Copy also bears date 2024-01-03
+Grantor: Example LLC
+Grantee: Alice Example
+Amount: $100,000.00 (One Hundred One Thousand Dollars)
+APN: 111-111-AK
+Status: FINAL
+*** END ***
+
+*** RECORDING REQ ***
+TestCase: AMBIGUOUS_AMOUNT_WARNING_PLUS_FAIL
+Doc: DEED-0014
+County: Santa Clara | State: CA
+Date Signed: 2024-01-01
+Date Recorded: 2024-01-02
+Prior consideration: $200,000.00. Amount: $100,000.00 (One Hundred One Thousand Dollars)
+Grantor: Example LLC
+Grantee: Alice Example
+APN: 111-111-AL
+Status: FINAL
+*** END ***
+
+*** RECORDING REQ ***
+TestCase: AMBIGUOUS_CURRENCY_WARNING_PLUS_FAIL
+Doc: DEED-0015
+County: Santa Clara | State: CA
+Date Signed: 2024-01-01
+Date Recorded: 2024-01-02
+Amount: $100,000.00 USD (One Hundred One Thousand Dollars). Original stated 50,000 EUR.
+Grantor: Example LLC
+Grantee: Alice Example
+APN: 111-111-AM
+Status: FINAL
+*** END ***
+
+*** RECORDING REQ ***
+TestCase: COUNTY_EXPANSION_NOT_IN_REFERENCE
+Doc: DEED-0016
+County: S. Barbara | State: CA
+Date Signed: 2024-01-01
+Date Recorded: 2024-01-02
+Grantor: Example LLC
+Grantee: Alice Example
+Amount: $100,000.00 (One Hundred Thousand Dollars)
+APN: 111-111-AN
+Status: FINAL
+*** END ***
+
+*** RECORDING REQ ***
+TestCase: COUNTY_FUZZY_MATCH_SUCCESS
+Doc: DEED-0017
+County: Sn Mtéo | State: CA
+Date Signed: 2024-01-01
+Date Recorded: 2024-01-02
+Grantor: Example LLC
+Grantee: Alice Example
+Amount: $100,000.00 (One Hundred Thousand Dollars)
+APN: 111-111-AO
+Status: FINAL
+*** END ***

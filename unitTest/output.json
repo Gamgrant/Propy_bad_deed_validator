@@ -1,0 +1,4796 @@
+{
+  "status": "FAIL",
+  "document_count": 16,
+  "documents": [
+    {
+      "index": 0,
+      "doc": {
+        "status": "FAIL",
+        "failures": {
+          "dates": [
+            {
+              "code": "DATE_ORDER_ERROR",
+              "severity": "error",
+              "summary": "Recorded date occurs before signed date (impossible).",
+              "details": "This suggests OCR/LLM extraction error or fraudulent / inconsistent document.",
+              "fields": [
+                "date_recorded",
+                "date_signed"
+              ],
+              "evidence": {
+                "date_signed": "2024-01-15",
+                "date_recorded": "2024-01-10"
+              }
+            }
+          ],
+          "amounts": [
+            {
+              "code": "AMOUNT_MISMATCH_ERROR",
+              "severity": "error",
+              "summary": "Digit amount does not match written amount.",
+              "details": "System cannot safely choose which one is correct without review.",
+              "fields": [
+                "amount_digits",
+                "amount_words"
+              ],
+              "evidence": {
+                "digits": "1250000.00",
+                "words": "1200000",
+                "difference": "50000.00"
+              }
+            }
+          ]
+        },
+        "extracted": {
+          "doc_id": "DEED-TRUST-0042",
+          "county": "Santa Clara",
+          "county_raw": "S. Clara",
+          "state": "CA",
+          "date_signed": "2024-01-15",
+          "date_recorded": "2024-01-10",
+          "grantor": "T.E.S.L.A. Holdings LLC",
+          "grantee": "John  &  Sarah  Connor",
+          "amount_digits": "$1,250,000.00",
+          "amount_words": "One Million Two Hundred Thousand Dollars",
+          "currency": "USD",
+          "apn": "992-001-XA",
+          "status": "PRELIMINARY",
+          "tax_rate": 0.012
+        },
+        "unknown_fields": {},
+        "audit": {
+          "presence": {
+            "doc_id": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "DEED-TRUST-0042"
+            },
+            "county": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "S. Clara"
+            },
+            "state": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "CA"
+            },
+            "date_signed": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "2024-01-15"
+            },
+            "date_recorded": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "2024-01-10"
+            },
+            "grantor": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "T.E.S.L.A. Holdings LLC"
+            },
+            "grantee": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "John  &  Sarah  Connor"
+            },
+            "apn": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "992-001-XA"
+            },
+            "status": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "PRELIMINARY"
+            },
+            "amount_digits": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "$1,250,000.00"
+            },
+            "amount_words": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "One Million Two Hundred Thousand Dollars"
+            },
+            "currency": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "USD"
+            }
+          },
+          "county_resolution": {
+            "expansion_attempted": true,
+            "expansion_candidates": [
+              "S. Clara",
+              "Santa Clara"
+            ],
+            "expansion_best_candidate": "Santa Clara",
+            "matched_county": "Santa Clara",
+            "match_score": 100.0
+          },
+          "spans": {
+            "doc_id": {
+              "value": "DEED-TRUST-0042",
+              "start": 71,
+              "end": 86
+            },
+            "county_raw": {
+              "value": "S. Clara",
+              "start": 95,
+              "end": 103
+            },
+            "date_signed": {
+              "value": "2024-01-15",
+              "start": 131,
+              "end": 141
+            },
+            "date_recorded": {
+              "value": "2024-01-10",
+              "start": 157,
+              "end": 167
+            },
+            "amount_digits": {
+              "value": "$1,250,000.00",
+              "start": 243,
+              "end": 256
+            },
+            "amount_words": {
+              "value": "One Million Two Hundred Thousand Dollars",
+              "start": 258,
+              "end": 298
+            },
+            "currency": {
+              "value": "Dollars",
+              "start": 291,
+              "end": 298
+            }
+          },
+          "langextract_raw_extractions": [
+            {
+              "class": "doc_id",
+              "text": "DEED-TRUST-0042",
+              "start": 71,
+              "end": 86,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "county",
+              "text": "S. Clara",
+              "start": 95,
+              "end": 103,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "state",
+              "text": "CA",
+              "start": 115,
+              "end": 117,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "date_signed",
+              "text": "2024-01-15",
+              "start": 131,
+              "end": 141,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "date_recorded",
+              "text": "2024-01-10",
+              "start": 157,
+              "end": 167,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "grantor",
+              "text": "T.E.S.L.A. Holdings LLC",
+              "start": 178,
+              "end": 201,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "grantee",
+              "text": "John  &  Sarah  Connor",
+              "start": 212,
+              "end": 234,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "amount_digits",
+              "text": "$1,250,000.00",
+              "start": 243,
+              "end": 256,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "amount_words",
+              "text": "One Million Two Hundred Thousand Dollars",
+              "start": 258,
+              "end": 298,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "currency",
+              "text": "Dollars",
+              "start": 291,
+              "end": 298,
+              "alignment_status": "match_fuzzy",
+              "attributes": {}
+            },
+            {
+              "class": "apn",
+              "text": "992-001-XA",
+              "start": 305,
+              "end": 315,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "status",
+              "text": "PRELIMINARY",
+              "start": 324,
+              "end": 335,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            }
+          ],
+          "county_loopback_candidates": [
+            {
+              "class": "county_mention",
+              "text": "S. Clara",
+              "start": 95,
+              "end": 103,
+              "alignment_status": "match_exact",
+              "attributes": {
+                "normalized_candidate": "Santa Clara",
+                "raw_line_hint": "County"
+              }
+            }
+          ],
+          "loopback_analysis": {
+            "date_ambiguity": null,
+            "amount_ambiguity": null,
+            "currency_mentions": [
+              "USD"
+            ]
+          },
+          "loopback_raw": {
+            "candidate_dates": [
+              {
+                "class": "date_mention",
+                "text": "2024-01-15",
+                "start": 131,
+                "end": 141,
+                "alignment_status": "match_exact",
+                "attributes": {
+                  "kind": "signed",
+                  "raw_line_hint": "Date Signed"
+                }
+              },
+              {
+                "class": "date_mention",
+                "text": "2024-01-10",
+                "start": 157,
+                "end": 167,
+                "alignment_status": "match_exact",
+                "attributes": {
+                  "kind": "recorded",
+                  "raw_line_hint": "Date Recorded"
+                }
+              }
+            ],
+            "candidate_amounts": [
+              {
+                "class": "amount_digits",
+                "text": "$1,250,000.00",
+                "start": 243,
+                "end": 256,
+                "alignment_status": "match_exact",
+                "attributes": {}
+              },
+              {
+                "class": "currency",
+                "text": "$",
+                "start": 243,
+                "end": 244,
+                "alignment_status": "match_fuzzy",
+                "attributes": {}
+              },
+              {
+                "class": "amount_words",
+                "text": "One Million Two Hundred Thousand Dollars",
+                "start": 258,
+                "end": 298,
+                "alignment_status": "match_exact",
+                "attributes": {}
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "index": 1,
+      "doc": {
+        "status": "FAIL",
+        "failures": {
+          "presence": [
+            {
+              "code": "FIELD_ABSENT",
+              "severity": "error",
+              "summary": "Required field is absent: amount_digits",
+              "details": "Label not found in raw OCR text (fail-closed).",
+              "fields": [
+                "amount_digits"
+              ],
+              "evidence": {
+                "field": "amount_digits",
+                "presence": "ABSENT"
+              }
+            },
+            {
+              "code": "FIELD_ABSENT",
+              "severity": "error",
+              "summary": "Required field is absent: amount_words",
+              "details": "Label not found in raw OCR text (fail-closed).",
+              "fields": [
+                "amount_words"
+              ],
+              "evidence": {
+                "field": "amount_words",
+                "presence": "ABSENT"
+              }
+            }
+          ]
+        },
+        "extracted": {
+          "doc_id": "DEED-0003",
+          "county": "Santa Clara",
+          "state": "CA",
+          "date_signed": "2024-01-01",
+          "date_recorded": "2024-01-02",
+          "grantor": "Example LLC",
+          "grantee": "Alice Example",
+          "apn": "111-111-AA",
+          "status": "FINAL",
+          "tax_rate": 0.012
+        },
+        "unknown_fields": {},
+        "audit": {
+          "presence": {
+            "doc_id": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "DEED-0003"
+            },
+            "county": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "Santa Clara"
+            },
+            "state": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "CA"
+            },
+            "date_signed": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "2024-01-01"
+            },
+            "date_recorded": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "2024-01-02"
+            },
+            "grantor": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "Example LLC"
+            },
+            "grantee": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "Alice Example"
+            },
+            "apn": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "111-111-AA"
+            },
+            "status": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "FINAL"
+            },
+            "amount_digits": {
+              "status": "ABSENT",
+              "raw_value": null
+            },
+            "amount_words": {
+              "status": "ABSENT",
+              "raw_value": null
+            },
+            "currency": {
+              "status": "ABSENT",
+              "raw_value": null
+            }
+          },
+          "county_resolution": {
+            "expansion_attempted": false,
+            "expansion_candidates": [],
+            "expansion_best_candidate": null,
+            "matched_county": "Santa Clara",
+            "match_score": 100.0
+          },
+          "spans": {
+            "doc_id": {
+              "value": "DEED-0003",
+              "start": 66,
+              "end": 75
+            },
+            "county_raw": {
+              "value": "Santa Clara",
+              "start": 84,
+              "end": 95
+            },
+            "date_signed": {
+              "value": "2024-01-01",
+              "start": 121,
+              "end": 131
+            },
+            "date_recorded": {
+              "value": "2024-01-02",
+              "start": 147,
+              "end": 157
+            },
+            "amount_digits": null,
+            "amount_words": null,
+            "currency": null
+          },
+          "langextract_raw_extractions": [
+            {
+              "class": "doc_id",
+              "text": "DEED-0003",
+              "start": 66,
+              "end": 75,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "county",
+              "text": "Santa Clara",
+              "start": 84,
+              "end": 95,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "state",
+              "text": "CA",
+              "start": 105,
+              "end": 107,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "date_signed",
+              "text": "2024-01-01",
+              "start": 121,
+              "end": 131,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "date_recorded",
+              "text": "2024-01-02",
+              "start": 147,
+              "end": 157,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "grantor",
+              "text": "Example LLC",
+              "start": 167,
+              "end": 178,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "grantee",
+              "text": "Alice Example",
+              "start": 188,
+              "end": 201,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "apn",
+              "text": "111-111-AA",
+              "start": 207,
+              "end": 217,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "status",
+              "text": "FINAL",
+              "start": 226,
+              "end": 231,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            }
+          ],
+          "county_loopback_candidates": null,
+          "loopback_analysis": {
+            "date_ambiguity": null,
+            "amount_ambiguity": null,
+            "currency_mentions": []
+          },
+          "loopback_raw": {
+            "candidate_dates": [
+              {
+                "class": "date_mention",
+                "text": "2024-01-01",
+                "start": 121,
+                "end": 131,
+                "alignment_status": "match_exact",
+                "attributes": {
+                  "kind": "signed",
+                  "raw_line_hint": "Date Signed"
+                }
+              },
+              {
+                "class": "date_mention",
+                "text": "2024-01-02",
+                "start": 147,
+                "end": 157,
+                "alignment_status": "match_exact",
+                "attributes": {
+                  "kind": "recorded",
+                  "raw_line_hint": "Date Recorded"
+                }
+              }
+            ],
+            "candidate_amounts": []
+          }
+        }
+      }
+    },
+    {
+      "index": 2,
+      "doc": {
+        "status": "FAIL",
+        "failures": {
+          "presence": [
+            {
+              "code": "FIELD_PRESENT_EMPTY",
+              "severity": "error",
+              "summary": "Required field is present but empty: amount_digits",
+              "details": "Label found but value missing/blank (fail-closed).",
+              "fields": [
+                "amount_digits"
+              ],
+              "evidence": {
+                "field": "amount_digits",
+                "presence": "PRESENT_EMPTY"
+              }
+            },
+            {
+              "code": "FIELD_PRESENT_EMPTY",
+              "severity": "error",
+              "summary": "Required field is present but empty: amount_words",
+              "details": "Label found but value missing/blank (fail-closed).",
+              "fields": [
+                "amount_words"
+              ],
+              "evidence": {
+                "field": "amount_words",
+                "presence": "PRESENT_EMPTY"
+              }
+            }
+          ]
+        },
+        "extracted": {
+          "doc_id": "DEED-0004",
+          "county": "Santa Clara",
+          "state": "CA",
+          "date_signed": "2024-01-01",
+          "date_recorded": "2024-01-02",
+          "grantor": "Example LLC",
+          "grantee": "Alice Example",
+          "apn": "111-111-AB",
+          "status": "FINAL",
+          "tax_rate": 0.012
+        },
+        "unknown_fields": {},
+        "audit": {
+          "presence": {
+            "doc_id": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "DEED-0004"
+            },
+            "county": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "Santa Clara"
+            },
+            "state": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "CA"
+            },
+            "date_signed": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "2024-01-01"
+            },
+            "date_recorded": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "2024-01-02"
+            },
+            "grantor": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "Example LLC"
+            },
+            "grantee": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "Alice Example"
+            },
+            "apn": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "111-111-AB"
+            },
+            "status": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "FINAL"
+            },
+            "amount_digits": {
+              "status": "PRESENT_EMPTY",
+              "raw_value": ""
+            },
+            "amount_words": {
+              "status": "PRESENT_EMPTY",
+              "raw_value": ""
+            },
+            "currency": {
+              "status": "PRESENT_EMPTY",
+              "raw_value": ""
+            }
+          },
+          "county_resolution": {
+            "expansion_attempted": false,
+            "expansion_candidates": [],
+            "expansion_best_candidate": null,
+            "matched_county": "Santa Clara",
+            "match_score": 100.0
+          },
+          "spans": {
+            "doc_id": {
+              "value": "DEED-0004",
+              "start": 67,
+              "end": 76
+            },
+            "county_raw": {
+              "value": "Santa Clara",
+              "start": 85,
+              "end": 96
+            },
+            "date_signed": {
+              "value": "2024-01-01",
+              "start": 122,
+              "end": 132
+            },
+            "date_recorded": {
+              "value": "2024-01-02",
+              "start": 148,
+              "end": 158
+            },
+            "amount_digits": null,
+            "amount_words": null,
+            "currency": null
+          },
+          "langextract_raw_extractions": [
+            {
+              "class": "doc_id",
+              "text": "DEED-0004",
+              "start": 67,
+              "end": 76,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "county",
+              "text": "Santa Clara",
+              "start": 85,
+              "end": 96,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "state",
+              "text": "CA",
+              "start": 106,
+              "end": 108,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "date_signed",
+              "text": "2024-01-01",
+              "start": 122,
+              "end": 132,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "date_recorded",
+              "text": "2024-01-02",
+              "start": 148,
+              "end": 158,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "grantor",
+              "text": "Example LLC",
+              "start": 168,
+              "end": 179,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "grantee",
+              "text": "Alice Example",
+              "start": 189,
+              "end": 202,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "apn",
+              "text": "111-111-AB",
+              "start": 216,
+              "end": 226,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "status",
+              "text": "FINAL",
+              "start": 235,
+              "end": 240,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            }
+          ],
+          "county_loopback_candidates": null,
+          "loopback_analysis": {
+            "date_ambiguity": null,
+            "amount_ambiguity": null,
+            "currency_mentions": []
+          },
+          "loopback_raw": {
+            "candidate_dates": [
+              {
+                "class": "date_mention",
+                "text": "2024-01-01",
+                "start": 122,
+                "end": 132,
+                "alignment_status": "match_exact",
+                "attributes": {
+                  "kind": "signed",
+                  "raw_line_hint": "Date Signed"
+                }
+              },
+              {
+                "class": "date_mention",
+                "text": "2024-01-02",
+                "start": 148,
+                "end": 158,
+                "alignment_status": "match_exact",
+                "attributes": {
+                  "kind": "recorded",
+                  "raw_line_hint": "Date Recorded"
+                }
+              }
+            ],
+            "candidate_amounts": []
+          }
+        }
+      }
+    },
+    {
+      "index": 3,
+      "doc": {
+        "status": "FAIL",
+        "failures": {
+          "identity": [
+            {
+              "code": "COUNTY_EXPANSION_NOT_IN_REFERENCE",
+              "severity": "error",
+              "summary": "County expansion candidate(s) were not found in counties.json.",
+              "details": "LLM suggested an expanded/normalized county name, but no match exists in reference data (fail-closed).",
+              "fields": [
+                "county"
+              ],
+              "evidence": {
+                "county_raw": "Xyzzyville",
+                "expansion_candidates": [
+                  "Xyzzyville"
+                ]
+              }
+            }
+          ]
+        },
+        "extracted": {
+          "doc_id": "DEED-0005",
+          "state": "CA",
+          "date_signed": "2024-01-01",
+          "date_recorded": "2024-01-02",
+          "grantor": "Example LLC",
+          "grantee": "Alice Example",
+          "amount_digits": "$100,000.00",
+          "amount_words": "One Hundred Thousand Dollars",
+          "currency": "USD",
+          "apn": "111-111-AC",
+          "status": "FINAL"
+        },
+        "unknown_fields": {},
+        "audit": {
+          "presence": {
+            "doc_id": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "DEED-0005"
+            },
+            "county": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "Xyzzyville"
+            },
+            "state": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "CA"
+            },
+            "date_signed": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "2024-01-01"
+            },
+            "date_recorded": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "2024-01-02"
+            },
+            "grantor": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "Example LLC"
+            },
+            "grantee": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "Alice Example"
+            },
+            "apn": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "111-111-AC"
+            },
+            "status": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "FINAL"
+            },
+            "amount_digits": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "$100,000.00"
+            },
+            "amount_words": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "One Hundred Thousand Dollars"
+            },
+            "currency": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "USD"
+            }
+          },
+          "county_resolution": {
+            "expansion_attempted": true,
+            "expansion_candidates": [
+              "Xyzzyville"
+            ],
+            "expansion_best_candidate": null,
+            "matched_county": null,
+            "match_score": null
+          },
+          "spans": {
+            "doc_id": {
+              "value": "DEED-0005",
+              "start": 52,
+              "end": 61
+            },
+            "county_raw": {
+              "value": "Xyzzyville",
+              "start": 70,
+              "end": 80
+            },
+            "date_signed": {
+              "value": "2024-01-01",
+              "start": 106,
+              "end": 116
+            },
+            "date_recorded": {
+              "value": "2024-01-02",
+              "start": 132,
+              "end": 142
+            },
+            "amount_digits": {
+              "value": "$100,000.00",
+              "start": 195,
+              "end": 206
+            },
+            "amount_words": {
+              "value": "One Hundred Thousand Dollars",
+              "start": 208,
+              "end": 236
+            },
+            "currency": {
+              "value": "Dollars",
+              "start": 229,
+              "end": 236
+            }
+          },
+          "langextract_raw_extractions": [
+            {
+              "class": "doc_id",
+              "text": "DEED-0005",
+              "start": 52,
+              "end": 61,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "county",
+              "text": "Xyzzyville",
+              "start": 70,
+              "end": 80,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "state",
+              "text": "CA",
+              "start": 90,
+              "end": 92,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "date_signed",
+              "text": "2024-01-01",
+              "start": 106,
+              "end": 116,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "date_recorded",
+              "text": "2024-01-02",
+              "start": 132,
+              "end": 142,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "grantor",
+              "text": "Example LLC",
+              "start": 152,
+              "end": 163,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "grantee",
+              "text": "Alice Example",
+              "start": 173,
+              "end": 186,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "amount_digits",
+              "text": "$100,000.00",
+              "start": 195,
+              "end": 206,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "amount_words",
+              "text": "One Hundred Thousand Dollars",
+              "start": 208,
+              "end": 236,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "currency",
+              "text": "Dollars",
+              "start": 229,
+              "end": 236,
+              "alignment_status": "match_fuzzy",
+              "attributes": {}
+            },
+            {
+              "class": "apn",
+              "text": "111-111-AC",
+              "start": 243,
+              "end": 253,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "status",
+              "text": "FINAL",
+              "start": 262,
+              "end": 267,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            }
+          ],
+          "county_loopback_candidates": [
+            {
+              "class": "county_mention",
+              "text": "Xyzzyville",
+              "start": 70,
+              "end": 80,
+              "alignment_status": "match_exact",
+              "attributes": {
+                "normalized_candidate": "Xyzzyville",
+                "raw_line_hint": "County"
+              }
+            }
+          ],
+          "loopback_analysis": {
+            "date_ambiguity": null,
+            "amount_ambiguity": null,
+            "currency_mentions": [
+              "USD"
+            ]
+          },
+          "loopback_raw": {
+            "candidate_dates": [
+              {
+                "class": "date_mention",
+                "text": "2024-01-01",
+                "start": 106,
+                "end": 116,
+                "alignment_status": "match_exact",
+                "attributes": {
+                  "kind": "signed",
+                  "raw_line_hint": "Date Signed"
+                }
+              },
+              {
+                "class": "date_mention",
+                "text": "2024-01-02",
+                "start": 132,
+                "end": 142,
+                "alignment_status": "match_exact",
+                "attributes": {
+                  "kind": "recorded",
+                  "raw_line_hint": "Date Recorded"
+                }
+              }
+            ],
+            "candidate_amounts": [
+              {
+                "class": "amount_digits",
+                "text": "$100,000.00",
+                "start": 195,
+                "end": 206,
+                "alignment_status": "match_exact",
+                "attributes": {}
+              },
+              {
+                "class": "currency",
+                "text": "$",
+                "start": 195,
+                "end": 196,
+                "alignment_status": "match_fuzzy",
+                "attributes": {}
+              },
+              {
+                "class": "amount_words",
+                "text": "One Hundred Thousand Dollars",
+                "start": 208,
+                "end": 236,
+                "alignment_status": "match_exact",
+                "attributes": {}
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "index": 4,
+      "doc": {
+        "status": "FAIL",
+        "failures": {
+          "presence": [
+            {
+              "code": "FIELD_PRESENT_EMPTY",
+              "severity": "error",
+              "summary": "Required field is present but empty: county",
+              "details": "Label found but value missing/blank (fail-closed).",
+              "fields": [
+                "county"
+              ],
+              "evidence": {
+                "field": "county",
+                "presence": "PRESENT_EMPTY"
+              }
+            },
+            {
+              "code": "FIELD_PRESENT_EMPTY",
+              "severity": "error",
+              "summary": "Required field is present but empty: state",
+              "details": "Label found but value missing/blank (fail-closed).",
+              "fields": [
+                "state"
+              ],
+              "evidence": {
+                "field": "state",
+                "presence": "PRESENT_EMPTY"
+              }
+            }
+          ],
+          "identity": [
+            {
+              "code": "UNKNOWN_COUNTY",
+              "severity": "error",
+              "summary": "County could not be matched to reference list.",
+              "details": "Cannot compute tax_rate without a verified county.",
+              "fields": [
+                "county"
+              ],
+              "evidence": {
+                "county_raw": null
+              }
+            }
+          ]
+        },
+        "extracted": {
+          "doc_id": "DEED-0006",
+          "date_signed": "2024-01-01",
+          "date_recorded": "2024-01-02",
+          "grantor": "Example LLC",
+          "grantee": "Alice Example",
+          "amount_digits": "$100,000.00",
+          "amount_words": "One Hundred Thousand Dollars",
+          "currency": "USD",
+          "apn": "111-111-AD",
+          "status": "FINAL"
+        },
+        "unknown_fields": {},
+        "audit": {
+          "presence": {
+            "doc_id": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "DEED-0006"
+            },
+            "county": {
+              "status": "PRESENT_EMPTY",
+              "raw_value": ""
+            },
+            "state": {
+              "status": "PRESENT_EMPTY",
+              "raw_value": ""
+            },
+            "date_signed": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "2024-01-01"
+            },
+            "date_recorded": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "2024-01-02"
+            },
+            "grantor": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "Example LLC"
+            },
+            "grantee": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "Alice Example"
+            },
+            "apn": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "111-111-AD"
+            },
+            "status": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "FINAL"
+            },
+            "amount_digits": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "$100,000.00"
+            },
+            "amount_words": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "One Hundred Thousand Dollars"
+            },
+            "currency": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "USD"
+            }
+          },
+          "county_resolution": {
+            "expansion_attempted": true,
+            "expansion_candidates": [
+              "County"
+            ],
+            "expansion_best_candidate": null,
+            "matched_county": null,
+            "match_score": null
+          },
+          "spans": {
+            "doc_id": {
+              "value": "DEED-0006",
+              "start": 58,
+              "end": 67
+            },
+            "county_raw": null,
+            "date_signed": {
+              "value": "2024-01-01",
+              "start": 89,
+              "end": 99
+            },
+            "date_recorded": {
+              "value": "2024-01-02",
+              "start": 115,
+              "end": 125
+            },
+            "amount_digits": {
+              "value": "$100,000.00",
+              "start": 178,
+              "end": 189
+            },
+            "amount_words": {
+              "value": "One Hundred Thousand Dollars",
+              "start": 191,
+              "end": 219
+            },
+            "currency": null
+          },
+          "langextract_raw_extractions": [
+            {
+              "class": "doc_id",
+              "text": "DEED-0006",
+              "start": 58,
+              "end": 67,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "date_signed",
+              "text": "2024-01-01",
+              "start": 89,
+              "end": 99,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "date_recorded",
+              "text": "2024-01-02",
+              "start": 115,
+              "end": 125,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "grantor",
+              "text": "Example LLC",
+              "start": 135,
+              "end": 146,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "grantee",
+              "text": "Alice Example",
+              "start": 156,
+              "end": 169,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "amount_digits",
+              "text": "$100,000.00",
+              "start": 178,
+              "end": 189,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "amount_words",
+              "text": "One Hundred Thousand Dollars",
+              "start": 191,
+              "end": 219,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "apn",
+              "text": "111-111-AD",
+              "start": 226,
+              "end": 236,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "status",
+              "text": "FINAL",
+              "start": 245,
+              "end": 250,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            }
+          ],
+          "county_loopback_candidates": [
+            {
+              "class": "county_mention",
+              "text": "County",
+              "start": 32,
+              "end": 38,
+              "alignment_status": "match_exact",
+              "attributes": {
+                "normalized_candidate": "",
+                "raw_line_hint": "County"
+              }
+            }
+          ],
+          "loopback_analysis": {
+            "date_ambiguity": null,
+            "amount_ambiguity": null,
+            "currency_mentions": [
+              "USD"
+            ]
+          },
+          "loopback_raw": {
+            "candidate_dates": [
+              {
+                "class": "date_mention",
+                "text": "2024-01-01",
+                "start": 89,
+                "end": 99,
+                "alignment_status": "match_exact",
+                "attributes": {
+                  "kind": "signed",
+                  "raw_line_hint": "Date Signed"
+                }
+              },
+              {
+                "class": "date_mention",
+                "text": "2024-01-02",
+                "start": 115,
+                "end": 125,
+                "alignment_status": "match_exact",
+                "attributes": {
+                  "kind": "recorded",
+                  "raw_line_hint": "Date Recorded"
+                }
+              }
+            ],
+            "candidate_amounts": [
+              {
+                "class": "amount_digits",
+                "text": "$100,000.00",
+                "start": 178,
+                "end": 189,
+                "alignment_status": "match_exact",
+                "attributes": {}
+              },
+              {
+                "class": "currency",
+                "text": "$",
+                "start": 178,
+                "end": 179,
+                "alignment_status": "match_fuzzy",
+                "attributes": {}
+              },
+              {
+                "class": "amount_words",
+                "text": "One Hundred Thousand Dollars",
+                "start": 191,
+                "end": 219,
+                "alignment_status": "match_exact",
+                "attributes": {}
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "index": 5,
+      "doc": {
+        "status": "FAIL",
+        "failures": {
+          "dates": [
+            {
+              "code": "DATE_PARSE_ERROR",
+              "severity": "error",
+              "summary": "Signed date could not be parsed.",
+              "details": "time data '01/15/2024' does not match format '%Y-%m-%d'",
+              "fields": [
+                "date_signed"
+              ],
+              "evidence": {
+                "date_signed_raw": "01/15/2024"
+              }
+            }
+          ]
+        },
+        "extracted": {
+          "doc_id": "DEED-0007",
+          "county": "Santa Clara",
+          "state": "CA",
+          "date_signed": "01/15/2024",
+          "date_recorded": "2024-01-16",
+          "grantor": "Example LLC",
+          "grantee": "Alice Example",
+          "amount_digits": "$100,000.00",
+          "amount_words": "One Hundred Thousand Dollars",
+          "currency": "USD",
+          "apn": "111-111-AE",
+          "status": "FINAL",
+          "tax_rate": 0.012
+        },
+        "unknown_fields": {},
+        "audit": {
+          "presence": {
+            "doc_id": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "DEED-0007"
+            },
+            "county": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "Santa Clara"
+            },
+            "state": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "CA"
+            },
+            "date_signed": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "01/15/2024"
+            },
+            "date_recorded": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "2024-01-16"
+            },
+            "grantor": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "Example LLC"
+            },
+            "grantee": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "Alice Example"
+            },
+            "apn": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "111-111-AE"
+            },
+            "status": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "FINAL"
+            },
+            "amount_digits": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "$100,000.00"
+            },
+            "amount_words": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "One Hundred Thousand Dollars"
+            },
+            "currency": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "USD"
+            }
+          },
+          "county_resolution": {
+            "expansion_attempted": false,
+            "expansion_candidates": [],
+            "expansion_best_candidate": null,
+            "matched_county": "Santa Clara",
+            "match_score": 100.0
+          },
+          "spans": {
+            "doc_id": {
+              "value": "DEED-0007",
+              "start": 54,
+              "end": 63
+            },
+            "county_raw": {
+              "value": "Santa Clara",
+              "start": 72,
+              "end": 83
+            },
+            "date_signed": {
+              "value": "01/15/2024",
+              "start": 109,
+              "end": 119
+            },
+            "date_recorded": {
+              "value": "2024-01-16",
+              "start": 135,
+              "end": 145
+            },
+            "amount_digits": {
+              "value": "$100,000.00",
+              "start": 198,
+              "end": 209
+            },
+            "amount_words": {
+              "value": "One Hundred Thousand Dollars",
+              "start": 211,
+              "end": 239
+            },
+            "currency": null
+          },
+          "langextract_raw_extractions": [
+            {
+              "class": "doc_id",
+              "text": "DEED-0007",
+              "start": 54,
+              "end": 63,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "county",
+              "text": "Santa Clara",
+              "start": 72,
+              "end": 83,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "state",
+              "text": "CA",
+              "start": 93,
+              "end": 95,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "date_signed",
+              "text": "01/15/2024",
+              "start": 109,
+              "end": 119,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "date_recorded",
+              "text": "2024-01-16",
+              "start": 135,
+              "end": 145,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "grantor",
+              "text": "Example LLC",
+              "start": 155,
+              "end": 166,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "grantee",
+              "text": "Alice Example",
+              "start": 176,
+              "end": 189,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "amount_digits",
+              "text": "$100,000.00",
+              "start": 198,
+              "end": 209,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "amount_words",
+              "text": "One Hundred Thousand Dollars",
+              "start": 211,
+              "end": 239,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "apn",
+              "text": "111-111-AE",
+              "start": 246,
+              "end": 256,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "status",
+              "text": "FINAL",
+              "start": 265,
+              "end": 270,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            }
+          ],
+          "county_loopback_candidates": null,
+          "loopback_analysis": {
+            "date_ambiguity": null,
+            "amount_ambiguity": null,
+            "currency_mentions": [
+              "USD"
+            ]
+          },
+          "loopback_raw": {
+            "candidate_dates": [
+              {
+                "class": "date_mention",
+                "text": "01/15/2024",
+                "start": 109,
+                "end": 119,
+                "alignment_status": "match_exact",
+                "attributes": {
+                  "kind": "signed",
+                  "raw_line_hint": "Date Signed"
+                }
+              },
+              {
+                "class": "date_mention",
+                "text": "2024-01-16",
+                "start": 135,
+                "end": 145,
+                "alignment_status": "match_exact",
+                "attributes": {
+                  "kind": "recorded",
+                  "raw_line_hint": "Date Recorded"
+                }
+              }
+            ],
+            "candidate_amounts": [
+              {
+                "class": "amount_digits",
+                "text": "$100,000.00",
+                "start": 198,
+                "end": 209,
+                "alignment_status": "match_exact",
+                "attributes": {}
+              },
+              {
+                "class": "currency",
+                "text": "$",
+                "start": 198,
+                "end": 199,
+                "alignment_status": "match_fuzzy",
+                "attributes": {}
+              },
+              {
+                "class": "amount_words",
+                "text": "One Hundred Thousand Dollars",
+                "start": 211,
+                "end": 239,
+                "alignment_status": "match_exact",
+                "attributes": {}
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "index": 6,
+      "doc": {
+        "status": "FAIL",
+        "failures": {
+          "dates": [
+            {
+              "code": "DATE_UNREASONABLE",
+              "severity": "error",
+              "summary": "Signed date is not reasonable.",
+              "details": "date_signed=1800-01-01 is before 1900-01-01",
+              "fields": [
+                "date_signed"
+              ]
+            },
+            {
+              "code": "DATE_UNREASONABLE",
+              "severity": "error",
+              "summary": "Recorded date is not reasonable.",
+              "details": "date_recorded=1800-01-02 is before 1900-01-01",
+              "fields": [
+                "date_recorded"
+              ]
+            }
+          ]
+        },
+        "extracted": {
+          "doc_id": "DEED-0008",
+          "county": "Santa Clara",
+          "state": "CA",
+          "date_signed": "1800-01-01",
+          "date_recorded": "1800-01-02",
+          "grantor": "Example LLC",
+          "grantee": "Alice Example",
+          "amount_digits": "$100,000.00",
+          "amount_words": "One Hundred Thousand Dollars",
+          "currency": "USD",
+          "apn": "111-111-AF",
+          "status": "FINAL",
+          "tax_rate": 0.012
+        },
+        "unknown_fields": {},
+        "audit": {
+          "presence": {
+            "doc_id": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "DEED-0008"
+            },
+            "county": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "Santa Clara"
+            },
+            "state": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "CA"
+            },
+            "date_signed": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "1800-01-01"
+            },
+            "date_recorded": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "1800-01-02"
+            },
+            "grantor": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "Example LLC"
+            },
+            "grantee": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "Alice Example"
+            },
+            "apn": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "111-111-AF"
+            },
+            "status": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "FINAL"
+            },
+            "amount_digits": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "$100,000.00"
+            },
+            "amount_words": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "One Hundred Thousand Dollars"
+            },
+            "currency": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "USD"
+            }
+          },
+          "county_resolution": {
+            "expansion_attempted": false,
+            "expansion_candidates": [],
+            "expansion_best_candidate": null,
+            "matched_county": "Santa Clara",
+            "match_score": 100.0
+          },
+          "spans": {
+            "doc_id": {
+              "value": "DEED-0008",
+              "start": 63,
+              "end": 72
+            },
+            "county_raw": {
+              "value": "Santa Clara",
+              "start": 81,
+              "end": 92
+            },
+            "date_signed": {
+              "value": "1800-01-01",
+              "start": 118,
+              "end": 128
+            },
+            "date_recorded": {
+              "value": "1800-01-02",
+              "start": 144,
+              "end": 154
+            },
+            "amount_digits": {
+              "value": "$100,000.00",
+              "start": 207,
+              "end": 218
+            },
+            "amount_words": {
+              "value": "One Hundred Thousand Dollars",
+              "start": 220,
+              "end": 248
+            },
+            "currency": {
+              "value": "Dollars",
+              "start": 241,
+              "end": 248
+            }
+          },
+          "langextract_raw_extractions": [
+            {
+              "class": "doc_id",
+              "text": "DEED-0008",
+              "start": 63,
+              "end": 72,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "county",
+              "text": "Santa Clara",
+              "start": 81,
+              "end": 92,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "state",
+              "text": "CA",
+              "start": 102,
+              "end": 104,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "date_signed",
+              "text": "1800-01-01",
+              "start": 118,
+              "end": 128,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "date_recorded",
+              "text": "1800-01-02",
+              "start": 144,
+              "end": 154,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "grantor",
+              "text": "Example LLC",
+              "start": 164,
+              "end": 175,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "grantee",
+              "text": "Alice Example",
+              "start": 185,
+              "end": 198,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "amount_digits",
+              "text": "$100,000.00",
+              "start": 207,
+              "end": 218,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "amount_words",
+              "text": "One Hundred Thousand Dollars",
+              "start": 220,
+              "end": 248,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "currency",
+              "text": "Dollars",
+              "start": 241,
+              "end": 248,
+              "alignment_status": "match_fuzzy",
+              "attributes": {}
+            },
+            {
+              "class": "apn",
+              "text": "111-111-AF",
+              "start": 255,
+              "end": 265,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "status",
+              "text": "FINAL",
+              "start": 274,
+              "end": 279,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            }
+          ],
+          "county_loopback_candidates": null,
+          "loopback_analysis": {
+            "date_ambiguity": null,
+            "amount_ambiguity": null,
+            "currency_mentions": [
+              "USD"
+            ]
+          },
+          "loopback_raw": {
+            "candidate_dates": [
+              {
+                "class": "date_mention",
+                "text": "1800-01-01",
+                "start": 118,
+                "end": 128,
+                "alignment_status": "match_exact",
+                "attributes": {
+                  "kind": "signed",
+                  "raw_line_hint": "Date Signed"
+                }
+              },
+              {
+                "class": "date_mention",
+                "text": "1800-01-02",
+                "start": 144,
+                "end": 154,
+                "alignment_status": "match_exact",
+                "attributes": {
+                  "kind": "recorded",
+                  "raw_line_hint": "Date Recorded"
+                }
+              }
+            ],
+            "candidate_amounts": [
+              {
+                "class": "amount_digits",
+                "text": "$100,000.00",
+                "start": 207,
+                "end": 218,
+                "alignment_status": "match_exact",
+                "attributes": {}
+              },
+              {
+                "class": "currency",
+                "text": "$",
+                "start": 207,
+                "end": 208,
+                "alignment_status": "match_fuzzy",
+                "attributes": {}
+              },
+              {
+                "class": "amount_words",
+                "text": "One Hundred Thousand Dollars",
+                "start": 220,
+                "end": 248,
+                "alignment_status": "match_exact",
+                "attributes": {}
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "index": 7,
+      "doc": {
+        "status": "FAIL",
+        "failures": {
+          "dates": [
+            {
+              "code": "DATE_UNREASONABLE",
+              "severity": "error",
+              "summary": "Signed date is not reasonable.",
+              "details": "date_signed=2099-01-01 is too far in the future (>2026-03-22)",
+              "fields": [
+                "date_signed"
+              ]
+            },
+            {
+              "code": "DATE_UNREASONABLE",
+              "severity": "error",
+              "summary": "Recorded date is not reasonable.",
+              "details": "date_recorded=2099-01-02 is too far in the future (>2026-03-22)",
+              "fields": [
+                "date_recorded"
+              ]
+            }
+          ]
+        },
+        "extracted": {
+          "doc_id": "DEED-0009",
+          "county": "Santa Clara",
+          "state": "CA",
+          "date_signed": "2099-01-01",
+          "date_recorded": "2099-01-02",
+          "grantor": "Example LLC",
+          "grantee": "Alice Example",
+          "amount_digits": "$100,000.00",
+          "amount_words": "One Hundred Thousand Dollars",
+          "currency": "USD",
+          "apn": "111-111-AG",
+          "status": "FINAL",
+          "tax_rate": 0.012
+        },
+        "unknown_fields": {},
+        "audit": {
+          "presence": {
+            "doc_id": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "DEED-0009"
+            },
+            "county": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "Santa Clara"
+            },
+            "state": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "CA"
+            },
+            "date_signed": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "2099-01-01"
+            },
+            "date_recorded": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "2099-01-02"
+            },
+            "grantor": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "Example LLC"
+            },
+            "grantee": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "Alice Example"
+            },
+            "apn": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "111-111-AG"
+            },
+            "status": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "FINAL"
+            },
+            "amount_digits": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "$100,000.00"
+            },
+            "amount_words": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "One Hundred Thousand Dollars"
+            },
+            "currency": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "USD"
+            }
+          },
+          "county_resolution": {
+            "expansion_attempted": false,
+            "expansion_candidates": [],
+            "expansion_best_candidate": null,
+            "matched_county": "Santa Clara",
+            "match_score": 100.0
+          },
+          "spans": {
+            "doc_id": {
+              "value": "DEED-0009",
+              "start": 66,
+              "end": 75
+            },
+            "county_raw": {
+              "value": "Santa Clara",
+              "start": 84,
+              "end": 95
+            },
+            "date_signed": {
+              "value": "2099-01-01",
+              "start": 121,
+              "end": 131
+            },
+            "date_recorded": {
+              "value": "2099-01-02",
+              "start": 147,
+              "end": 157
+            },
+            "amount_digits": {
+              "value": "$100,000.00",
+              "start": 210,
+              "end": 221
+            },
+            "amount_words": {
+              "value": "One Hundred Thousand Dollars",
+              "start": 223,
+              "end": 251
+            },
+            "currency": {
+              "value": "Dollars",
+              "start": 244,
+              "end": 251
+            }
+          },
+          "langextract_raw_extractions": [
+            {
+              "class": "doc_id",
+              "text": "DEED-0009",
+              "start": 66,
+              "end": 75,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "county",
+              "text": "Santa Clara",
+              "start": 84,
+              "end": 95,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "state",
+              "text": "CA",
+              "start": 105,
+              "end": 107,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "date_signed",
+              "text": "2099-01-01",
+              "start": 121,
+              "end": 131,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "date_recorded",
+              "text": "2099-01-02",
+              "start": 147,
+              "end": 157,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "grantor",
+              "text": "Example LLC",
+              "start": 167,
+              "end": 178,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "grantee",
+              "text": "Alice Example",
+              "start": 188,
+              "end": 201,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "amount_digits",
+              "text": "$100,000.00",
+              "start": 210,
+              "end": 221,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "amount_words",
+              "text": "One Hundred Thousand Dollars",
+              "start": 223,
+              "end": 251,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "currency",
+              "text": "Dollars",
+              "start": 244,
+              "end": 251,
+              "alignment_status": "match_fuzzy",
+              "attributes": {}
+            },
+            {
+              "class": "apn",
+              "text": "111-111-AG",
+              "start": 258,
+              "end": 268,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "status",
+              "text": "FINAL",
+              "start": 277,
+              "end": 282,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            }
+          ],
+          "county_loopback_candidates": null,
+          "loopback_analysis": {
+            "date_ambiguity": null,
+            "amount_ambiguity": null,
+            "currency_mentions": [
+              "USD"
+            ]
+          },
+          "loopback_raw": {
+            "candidate_dates": [
+              {
+                "class": "date_mention",
+                "text": "2099-01-01",
+                "start": 121,
+                "end": 131,
+                "alignment_status": "match_exact",
+                "attributes": {
+                  "kind": "signed",
+                  "raw_line_hint": "Date Signed"
+                }
+              },
+              {
+                "class": "date_mention",
+                "text": "2099-01-02",
+                "start": 147,
+                "end": 157,
+                "alignment_status": "match_exact",
+                "attributes": {
+                  "kind": "recorded",
+                  "raw_line_hint": "Date Recorded"
+                }
+              }
+            ],
+            "candidate_amounts": [
+              {
+                "class": "amount_digits",
+                "text": "$100,000.00",
+                "start": 210,
+                "end": 221,
+                "alignment_status": "match_exact",
+                "attributes": {}
+              },
+              {
+                "class": "currency",
+                "text": "$",
+                "start": 210,
+                "end": 211,
+                "alignment_status": "match_fuzzy",
+                "attributes": {}
+              },
+              {
+                "class": "amount_words",
+                "text": "One Hundred Thousand Dollars",
+                "start": 223,
+                "end": 251,
+                "alignment_status": "match_exact",
+                "attributes": {}
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "index": 8,
+      "doc": {
+        "status": "FAIL",
+        "failures": {
+          "amounts": [
+            {
+              "code": "AMOUNT_DIGITS_PARSE_ERROR",
+              "severity": "error",
+              "summary": "Digit amount could not be parsed.",
+              "details": "Unrecognized money format: TBD",
+              "fields": [
+                "amount_digits"
+              ],
+              "evidence": {
+                "amount_digits_raw": "TBD"
+              }
+            }
+          ],
+          "other": [
+            {
+              "code": "EXTRACTED_VALUE_MISSING",
+              "severity": "error",
+              "summary": "Extractor failed to extract required field with value: amount_digits",
+              "details": "Raw OCR has a value for this field, but primary extraction returned blank/None (fail-closed).",
+              "fields": [
+                "amount_digits"
+              ],
+              "evidence": {
+                "field": "amount_digits",
+                "presence": "PRESENT_WITH_VALUE",
+                "raw_value": "TBD",
+                "extracted_text": null
+              }
+            }
+          ]
+        },
+        "extracted": {
+          "doc_id": "DEED-0010",
+          "county": "Santa Clara",
+          "state": "CA",
+          "date_signed": "2024-01-01",
+          "date_recorded": "2024-01-02",
+          "grantor": "Example LLC",
+          "grantee": "Alice Example",
+          "amount_digits": "TBD",
+          "amount_words": "One Hundred Twenty Thousand Dollars",
+          "apn": "111-111-AH",
+          "status": "FINAL",
+          "tax_rate": 0.012
+        },
+        "unknown_fields": {},
+        "audit": {
+          "presence": {
+            "doc_id": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "DEED-0010"
+            },
+            "county": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "Santa Clara"
+            },
+            "state": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "CA"
+            },
+            "date_signed": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "2024-01-01"
+            },
+            "date_recorded": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "2024-01-02"
+            },
+            "grantor": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "Example LLC"
+            },
+            "grantee": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "Alice Example"
+            },
+            "apn": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "111-111-AH"
+            },
+            "status": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "FINAL"
+            },
+            "amount_digits": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "TBD"
+            },
+            "amount_words": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "One Hundred Twenty Thousand Dollars"
+            },
+            "currency": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "TBD"
+            }
+          },
+          "county_resolution": {
+            "expansion_attempted": false,
+            "expansion_candidates": [],
+            "expansion_best_candidate": null,
+            "matched_county": "Santa Clara",
+            "match_score": 100.0
+          },
+          "spans": {
+            "doc_id": {
+              "value": "DEED-0010",
+              "start": 63,
+              "end": 72
+            },
+            "county_raw": {
+              "value": "Santa Clara",
+              "start": 81,
+              "end": 92
+            },
+            "date_signed": {
+              "value": "2024-01-01",
+              "start": 118,
+              "end": 128
+            },
+            "date_recorded": {
+              "value": "2024-01-02",
+              "start": 144,
+              "end": 154
+            },
+            "amount_digits": null,
+            "amount_words": {
+              "value": "One Hundred Twenty Thousand Dollars",
+              "start": 212,
+              "end": 247
+            },
+            "currency": null
+          },
+          "langextract_raw_extractions": [
+            {
+              "class": "doc_id",
+              "text": "DEED-0010",
+              "start": 63,
+              "end": 72,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "county",
+              "text": "Santa Clara",
+              "start": 81,
+              "end": 92,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "state",
+              "text": "CA",
+              "start": 102,
+              "end": 104,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "date_signed",
+              "text": "2024-01-01",
+              "start": 118,
+              "end": 128,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "date_recorded",
+              "text": "2024-01-02",
+              "start": 144,
+              "end": 154,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "grantor",
+              "text": "Example LLC",
+              "start": 164,
+              "end": 175,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "grantee",
+              "text": "Alice Example",
+              "start": 185,
+              "end": 198,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "amount_words",
+              "text": "One Hundred Twenty Thousand Dollars",
+              "start": 212,
+              "end": 247,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "apn",
+              "text": "111-111-AH",
+              "start": 254,
+              "end": 264,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "status",
+              "text": "FINAL",
+              "start": 273,
+              "end": 278,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            }
+          ],
+          "county_loopback_candidates": null,
+          "loopback_analysis": {
+            "date_ambiguity": null,
+            "amount_ambiguity": null,
+            "currency_mentions": [
+              "USD"
+            ]
+          },
+          "loopback_raw": {
+            "candidate_dates": [
+              {
+                "class": "date_mention",
+                "text": "2024-01-01",
+                "start": 118,
+                "end": 128,
+                "alignment_status": "match_exact",
+                "attributes": {
+                  "kind": "signed",
+                  "raw_line_hint": "Date Signed"
+                }
+              },
+              {
+                "class": "date_mention",
+                "text": "2024-01-02",
+                "start": 144,
+                "end": 154,
+                "alignment_status": "match_exact",
+                "attributes": {
+                  "kind": "recorded",
+                  "raw_line_hint": "Date Recorded"
+                }
+              }
+            ],
+            "candidate_amounts": [
+              {
+                "class": "currency",
+                "text": "Dollars",
+                "start": 240,
+                "end": 247,
+                "alignment_status": "match_fuzzy",
+                "attributes": {}
+              },
+              {
+                "class": "amount_words",
+                "text": "One Hundred Twenty Thousand Dollars",
+                "start": 212,
+                "end": 247,
+                "alignment_status": "match_exact",
+                "attributes": {}
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "index": 9,
+      "doc": {
+        "status": "FAIL",
+        "failures": {
+          "amounts": [
+            {
+              "code": "AMOUNT_WORDS_PARSE_ERROR",
+              "severity": "error",
+              "summary": "Written amount could not be parsed deterministically.",
+              "details": "Unknown number token: dollazzz",
+              "fields": [
+                "amount_words"
+              ],
+              "evidence": {
+                "amount_words_raw": "One Hundred Twenty Thousand Dollazzz"
+              }
+            }
+          ]
+        },
+        "extracted": {
+          "doc_id": "DEED-0011",
+          "county": "Santa Clara",
+          "state": "CA",
+          "date_signed": "2024-01-01",
+          "date_recorded": "2024-01-02",
+          "grantor": "Example LLC",
+          "grantee": "Alice Example",
+          "amount_digits": "$120,000.00",
+          "amount_words": "One Hundred Twenty Thousand Dollazzz",
+          "currency": "USD",
+          "apn": "111-111-AI",
+          "status": "FINAL",
+          "tax_rate": 0.012
+        },
+        "unknown_fields": {},
+        "audit": {
+          "presence": {
+            "doc_id": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "DEED-0011"
+            },
+            "county": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "Santa Clara"
+            },
+            "state": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "CA"
+            },
+            "date_signed": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "2024-01-01"
+            },
+            "date_recorded": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "2024-01-02"
+            },
+            "grantor": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "Example LLC"
+            },
+            "grantee": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "Alice Example"
+            },
+            "apn": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "111-111-AI"
+            },
+            "status": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "FINAL"
+            },
+            "amount_digits": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "$120,000.00"
+            },
+            "amount_words": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "One Hundred Twenty Thousand Dollazzz"
+            },
+            "currency": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "USD"
+            }
+          },
+          "county_resolution": {
+            "expansion_attempted": false,
+            "expansion_candidates": [],
+            "expansion_best_candidate": null,
+            "matched_county": "Santa Clara",
+            "match_score": 100.0
+          },
+          "spans": {
+            "doc_id": {
+              "value": "DEED-0011",
+              "start": 62,
+              "end": 71
+            },
+            "county_raw": {
+              "value": "Santa Clara",
+              "start": 80,
+              "end": 91
+            },
+            "date_signed": {
+              "value": "2024-01-01",
+              "start": 117,
+              "end": 127
+            },
+            "date_recorded": {
+              "value": "2024-01-02",
+              "start": 143,
+              "end": 153
+            },
+            "amount_digits": {
+              "value": "$120,000.00",
+              "start": 206,
+              "end": 217
+            },
+            "amount_words": {
+              "value": "One Hundred Twenty Thousand Dollazzz",
+              "start": 219,
+              "end": 255
+            },
+            "currency": null
+          },
+          "langextract_raw_extractions": [
+            {
+              "class": "doc_id",
+              "text": "DEED-0011",
+              "start": 62,
+              "end": 71,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "county",
+              "text": "Santa Clara",
+              "start": 80,
+              "end": 91,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "state",
+              "text": "CA",
+              "start": 101,
+              "end": 103,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "date_signed",
+              "text": "2024-01-01",
+              "start": 117,
+              "end": 127,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "date_recorded",
+              "text": "2024-01-02",
+              "start": 143,
+              "end": 153,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "grantor",
+              "text": "Example LLC",
+              "start": 163,
+              "end": 174,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "grantee",
+              "text": "Alice Example",
+              "start": 184,
+              "end": 197,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "amount_digits",
+              "text": "$120,000.00",
+              "start": 206,
+              "end": 217,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "amount_words",
+              "text": "One Hundred Twenty Thousand Dollazzz",
+              "start": 219,
+              "end": 255,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "apn",
+              "text": "111-111-AI",
+              "start": 262,
+              "end": 272,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "status",
+              "text": "FINAL",
+              "start": 281,
+              "end": 286,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            }
+          ],
+          "county_loopback_candidates": null,
+          "loopback_analysis": {
+            "date_ambiguity": null,
+            "amount_ambiguity": null,
+            "currency_mentions": [
+              "USD"
+            ]
+          },
+          "loopback_raw": {
+            "candidate_dates": [
+              {
+                "class": "date_mention",
+                "text": "2024-01-01",
+                "start": 117,
+                "end": 127,
+                "alignment_status": "match_exact",
+                "attributes": {
+                  "kind": "signed",
+                  "raw_line_hint": "Date Signed"
+                }
+              },
+              {
+                "class": "date_mention",
+                "text": "2024-01-02",
+                "start": 143,
+                "end": 153,
+                "alignment_status": "match_exact",
+                "attributes": {
+                  "kind": "recorded",
+                  "raw_line_hint": "Date Recorded"
+                }
+              }
+            ],
+            "candidate_amounts": [
+              {
+                "class": "amount_digits",
+                "text": "$120,000.00",
+                "start": 206,
+                "end": 217,
+                "alignment_status": "match_exact",
+                "attributes": {}
+              },
+              {
+                "class": "currency",
+                "text": "$",
+                "start": 206,
+                "end": 207,
+                "alignment_status": "match_fuzzy",
+                "attributes": {}
+              },
+              {
+                "class": "amount_words",
+                "text": "One Hundred Twenty Thousand Dollazzz",
+                "start": 219,
+                "end": 255,
+                "alignment_status": "match_exact",
+                "attributes": {}
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "index": 10,
+      "doc": {
+        "status": "FAIL",
+        "failures": {
+          "amounts": [
+            {
+              "code": "CURRENCY_MISMATCH",
+              "severity": "error",
+              "summary": "Currency inconsistency between digits and words.",
+              "details": "Potential OCR error or tampering; requires review.",
+              "fields": [
+                "amount_digits",
+                "amount_words",
+                "currency"
+              ],
+              "evidence": {
+                "digit_currency": "EUR",
+                "words_currency": "USD",
+                "mentions": [
+                  "EUR"
+                ]
+              }
+            }
+          ]
+        },
+        "extracted": {
+          "doc_id": "DEED-0012",
+          "county": "Santa Clara",
+          "state": "CA",
+          "date_signed": "2024-01-01",
+          "date_recorded": "2024-01-02",
+          "grantor": "Example LLC",
+          "grantee": "Alice Example",
+          "amount_digits": "100,000.00 EUR",
+          "amount_words": "One Hundred Thousand Dollars",
+          "currency": "EUR",
+          "apn": "111-111-AJ",
+          "status": "FINAL",
+          "tax_rate": 0.012
+        },
+        "unknown_fields": {},
+        "audit": {
+          "presence": {
+            "doc_id": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "DEED-0012"
+            },
+            "county": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "Santa Clara"
+            },
+            "state": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "CA"
+            },
+            "date_signed": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "2024-01-01"
+            },
+            "date_recorded": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "2024-01-02"
+            },
+            "grantor": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "Example LLC"
+            },
+            "grantee": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "Alice Example"
+            },
+            "apn": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "111-111-AJ"
+            },
+            "status": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "FINAL"
+            },
+            "amount_digits": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "100,000.00 EUR"
+            },
+            "amount_words": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "One Hundred Thousand Dollars"
+            },
+            "currency": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "EUR"
+            }
+          },
+          "county_resolution": {
+            "expansion_attempted": false,
+            "expansion_candidates": [],
+            "expansion_best_candidate": null,
+            "matched_county": "Santa Clara",
+            "match_score": 100.0
+          },
+          "spans": {
+            "doc_id": {
+              "value": "DEED-0012",
+              "start": 55,
+              "end": 64
+            },
+            "county_raw": {
+              "value": "Santa Clara",
+              "start": 73,
+              "end": 84
+            },
+            "date_signed": {
+              "value": "2024-01-01",
+              "start": 110,
+              "end": 120
+            },
+            "date_recorded": {
+              "value": "2024-01-02",
+              "start": 136,
+              "end": 146
+            },
+            "amount_digits": {
+              "value": "100,000.00 EUR",
+              "start": 199,
+              "end": 213
+            },
+            "amount_words": {
+              "value": "One Hundred Thousand Dollars",
+              "start": 215,
+              "end": 243
+            },
+            "currency": {
+              "value": "EUR",
+              "start": 210,
+              "end": 213
+            }
+          },
+          "langextract_raw_extractions": [
+            {
+              "class": "doc_id",
+              "text": "DEED-0012",
+              "start": 55,
+              "end": 64,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "county",
+              "text": "Santa Clara",
+              "start": 73,
+              "end": 84,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "state",
+              "text": "CA",
+              "start": 94,
+              "end": 96,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "date_signed",
+              "text": "2024-01-01",
+              "start": 110,
+              "end": 120,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "date_recorded",
+              "text": "2024-01-02",
+              "start": 136,
+              "end": 146,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "grantor",
+              "text": "Example LLC",
+              "start": 156,
+              "end": 167,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "grantee",
+              "text": "Alice Example",
+              "start": 177,
+              "end": 190,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "amount_digits",
+              "text": "100,000.00 EUR",
+              "start": 199,
+              "end": 213,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "amount_words",
+              "text": "One Hundred Thousand Dollars",
+              "start": 215,
+              "end": 243,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "currency",
+              "text": "EUR",
+              "start": 210,
+              "end": 213,
+              "alignment_status": "match_fuzzy",
+              "attributes": {}
+            },
+            {
+              "class": "apn",
+              "text": "111-111-AJ",
+              "start": 250,
+              "end": 260,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "status",
+              "text": "FINAL",
+              "start": 269,
+              "end": 274,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            }
+          ],
+          "county_loopback_candidates": null,
+          "loopback_analysis": {
+            "date_ambiguity": null,
+            "amount_ambiguity": null,
+            "currency_mentions": [
+              "EUR"
+            ]
+          },
+          "loopback_raw": {
+            "candidate_dates": [
+              {
+                "class": "date_mention",
+                "text": "2024-01-01",
+                "start": 110,
+                "end": 120,
+                "alignment_status": "match_exact",
+                "attributes": {
+                  "kind": "signed",
+                  "raw_line_hint": "Date Signed"
+                }
+              },
+              {
+                "class": "date_mention",
+                "text": "2024-01-02",
+                "start": 136,
+                "end": 146,
+                "alignment_status": "match_exact",
+                "attributes": {
+                  "kind": "recorded",
+                  "raw_line_hint": "Date Recorded"
+                }
+              }
+            ],
+            "candidate_amounts": [
+              {
+                "class": "amount_digits",
+                "text": "100,000.00 EUR",
+                "start": 199,
+                "end": 213,
+                "alignment_status": "match_exact",
+                "attributes": {}
+              },
+              {
+                "class": "currency",
+                "text": "EUR",
+                "start": 210,
+                "end": 213,
+                "alignment_status": "match_fuzzy",
+                "attributes": {}
+              },
+              {
+                "class": "amount_words",
+                "text": "One Hundred Thousand Dollars",
+                "start": 215,
+                "end": 243,
+                "alignment_status": "match_exact",
+                "attributes": {}
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "index": 11,
+      "doc": {
+        "status": "FAIL",
+        "failures": {
+          "dates": [
+            {
+              "code": "AMBIGUOUS_DATE",
+              "severity": "warning",
+              "summary": "Multiple plausible date candidates detected.",
+              "details": "Requires review to confirm which dates are authoritative.",
+              "fields": [
+                "date_signed",
+                "date_recorded"
+              ],
+              "evidence": {
+                "other": [
+                  "2024-01-03"
+                ]
+              }
+            }
+          ],
+          "amounts": [
+            {
+              "code": "AMOUNT_MISMATCH_ERROR",
+              "severity": "error",
+              "summary": "Digit amount does not match written amount.",
+              "details": "System cannot safely choose which one is correct without review.",
+              "fields": [
+                "amount_digits",
+                "amount_words"
+              ],
+              "evidence": {
+                "digits": "100000.00",
+                "words": "101000",
+                "difference": "-1000.00"
+              }
+            }
+          ]
+        },
+        "extracted": {
+          "doc_id": "DEED-0013",
+          "county": "Santa Clara",
+          "state": "CA",
+          "date_signed": "2024-01-01",
+          "date_recorded": "2024-01-02",
+          "grantor": "Example LLC",
+          "grantee": "Alice Example",
+          "amount_digits": "$100,000.00",
+          "amount_words": "One Hundred One Thousand Dollars",
+          "currency": "USD",
+          "apn": "111-111-AK",
+          "status": "FINAL",
+          "tax_rate": 0.012
+        },
+        "unknown_fields": {},
+        "audit": {
+          "presence": {
+            "doc_id": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "DEED-0013"
+            },
+            "county": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "Santa Clara"
+            },
+            "state": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "CA"
+            },
+            "date_signed": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "2024-01-01"
+            },
+            "date_recorded": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "2024-01-02"
+            },
+            "grantor": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "Example LLC"
+            },
+            "grantee": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "Alice Example"
+            },
+            "apn": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "111-111-AK"
+            },
+            "status": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "FINAL"
+            },
+            "amount_digits": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "$100,000.00"
+            },
+            "amount_words": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "One Hundred One Thousand Dollars"
+            },
+            "currency": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "USD"
+            }
+          },
+          "county_resolution": {
+            "expansion_attempted": false,
+            "expansion_candidates": [],
+            "expansion_best_candidate": null,
+            "matched_county": "Santa Clara",
+            "match_score": 100.0
+          },
+          "spans": {
+            "doc_id": {
+              "value": "DEED-0013",
+              "start": 70,
+              "end": 79
+            },
+            "county_raw": {
+              "value": "Santa Clara",
+              "start": 88,
+              "end": 99
+            },
+            "date_signed": {
+              "value": "2024-01-01",
+              "start": 125,
+              "end": 135
+            },
+            "date_recorded": {
+              "value": "2024-01-02",
+              "start": 151,
+              "end": 161
+            },
+            "amount_digits": {
+              "value": "$100,000.00",
+              "start": 252,
+              "end": 263
+            },
+            "amount_words": {
+              "value": "One Hundred One Thousand Dollars",
+              "start": 265,
+              "end": 297
+            },
+            "currency": {
+              "value": "Dollars",
+              "start": 290,
+              "end": 297
+            }
+          },
+          "langextract_raw_extractions": [
+            {
+              "class": "doc_id",
+              "text": "DEED-0013",
+              "start": 70,
+              "end": 79,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "county",
+              "text": "Santa Clara",
+              "start": 88,
+              "end": 99,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "state",
+              "text": "CA",
+              "start": 109,
+              "end": 111,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "date_signed",
+              "text": "2024-01-01",
+              "start": 125,
+              "end": 135,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "date_recorded",
+              "text": "2024-01-02",
+              "start": 151,
+              "end": 161,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "grantor",
+              "text": "Example LLC",
+              "start": 209,
+              "end": 220,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "grantee",
+              "text": "Alice Example",
+              "start": 230,
+              "end": 243,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "amount_digits",
+              "text": "$100,000.00",
+              "start": 252,
+              "end": 263,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "amount_words",
+              "text": "One Hundred One Thousand Dollars",
+              "start": 265,
+              "end": 297,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "currency",
+              "text": "Dollars",
+              "start": 290,
+              "end": 297,
+              "alignment_status": "match_fuzzy",
+              "attributes": {}
+            },
+            {
+              "class": "apn",
+              "text": "111-111-AK",
+              "start": 304,
+              "end": 314,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "status",
+              "text": "FINAL",
+              "start": 323,
+              "end": 328,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            }
+          ],
+          "county_loopback_candidates": null,
+          "loopback_analysis": {
+            "date_ambiguity": {
+              "other": [
+                "2024-01-03"
+              ]
+            },
+            "amount_ambiguity": null,
+            "currency_mentions": [
+              "USD"
+            ]
+          },
+          "loopback_raw": {
+            "candidate_dates": [
+              {
+                "class": "date_mention",
+                "text": "2024-01-01",
+                "start": 125,
+                "end": 135,
+                "alignment_status": "match_exact",
+                "attributes": {
+                  "kind": "signed",
+                  "raw_line_hint": "Date Signed"
+                }
+              },
+              {
+                "class": "date_mention",
+                "text": "2024-01-02",
+                "start": 151,
+                "end": 161,
+                "alignment_status": "match_exact",
+                "attributes": {
+                  "kind": "recorded",
+                  "raw_line_hint": "Date Recorded"
+                }
+              },
+              {
+                "class": "date_mention",
+                "text": "2024-01-03",
+                "start": 189,
+                "end": 199,
+                "alignment_status": "match_exact",
+                "attributes": {
+                  "kind": "other",
+                  "raw_line_hint": "Note: Copy also bears date"
+                }
+              }
+            ],
+            "candidate_amounts": [
+              {
+                "class": "amount_digits",
+                "text": "$100,000.00",
+                "start": 252,
+                "end": 263,
+                "alignment_status": "match_exact",
+                "attributes": {}
+              },
+              {
+                "class": "currency",
+                "text": "$",
+                "start": 252,
+                "end": 253,
+                "alignment_status": "match_fuzzy",
+                "attributes": {}
+              },
+              {
+                "class": "amount_words",
+                "text": "One Hundred One Thousand Dollars",
+                "start": 265,
+                "end": 297,
+                "alignment_status": "match_exact",
+                "attributes": {}
+              },
+              {
+                "class": "currency",
+                "text": "Dollars",
+                "start": 290,
+                "end": 297,
+                "alignment_status": "match_fuzzy",
+                "attributes": {}
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "index": 12,
+      "doc": {
+        "status": "FAIL",
+        "failures": {
+          "presence": [
+            {
+              "code": "FIELD_ABSENT",
+              "severity": "error",
+              "summary": "Required field is absent: amount_digits",
+              "details": "Label not found in raw OCR text (fail-closed).",
+              "fields": [
+                "amount_digits"
+              ],
+              "evidence": {
+                "field": "amount_digits",
+                "presence": "ABSENT"
+              }
+            },
+            {
+              "code": "FIELD_ABSENT",
+              "severity": "error",
+              "summary": "Required field is absent: amount_words",
+              "details": "Label not found in raw OCR text (fail-closed).",
+              "fields": [
+                "amount_words"
+              ],
+              "evidence": {
+                "field": "amount_words",
+                "presence": "ABSENT"
+              }
+            }
+          ],
+          "amounts": [
+            {
+              "code": "AMOUNT_MISMATCH_ERROR",
+              "severity": "error",
+              "summary": "Digit amount does not match written amount.",
+              "details": "System cannot safely choose which one is correct without review.",
+              "fields": [
+                "amount_digits",
+                "amount_words"
+              ],
+              "evidence": {
+                "digits": "100000.00",
+                "words": "101000",
+                "difference": "-1000.00"
+              }
+            },
+            {
+              "code": "AMBIGUOUS_AMOUNT",
+              "severity": "warning",
+              "summary": "Multiple digit-amount candidates detected.",
+              "details": "Requires review to confirm which amount is authoritative.",
+              "fields": [
+                "amount_digits"
+              ],
+              "evidence": {
+                "candidates": [
+                  {
+                    "amount": "100000.00",
+                    "currency": null
+                  },
+                  {
+                    "amount": "100000.00",
+                    "currency": "USD"
+                  },
+                  {
+                    "amount": "200000.00",
+                    "currency": "USD"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "extracted": {
+          "doc_id": "DEED-0014",
+          "county": "Santa Clara",
+          "state": "CA",
+          "date_signed": "2024-01-01",
+          "date_recorded": "2024-01-02",
+          "grantor": "Example LLC",
+          "grantee": "Alice Example",
+          "amount_digits": "$100,000.00",
+          "amount_words": "One Hundred One Thousand Dollars",
+          "currency": "USD",
+          "apn": "111-111-AL",
+          "status": "FINAL",
+          "tax_rate": 0.012
+        },
+        "unknown_fields": {},
+        "audit": {
+          "presence": {
+            "doc_id": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "DEED-0014"
+            },
+            "county": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "Santa Clara"
+            },
+            "state": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "CA"
+            },
+            "date_signed": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "2024-01-01"
+            },
+            "date_recorded": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "2024-01-02"
+            },
+            "grantor": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "Example LLC"
+            },
+            "grantee": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "Alice Example"
+            },
+            "apn": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "111-111-AL"
+            },
+            "status": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "FINAL"
+            },
+            "amount_digits": {
+              "status": "ABSENT",
+              "raw_value": null
+            },
+            "amount_words": {
+              "status": "ABSENT",
+              "raw_value": null
+            },
+            "currency": {
+              "status": "ABSENT",
+              "raw_value": null
+            }
+          },
+          "county_resolution": {
+            "expansion_attempted": false,
+            "expansion_candidates": [],
+            "expansion_best_candidate": null,
+            "matched_county": "Santa Clara",
+            "match_score": 100.0
+          },
+          "spans": {
+            "doc_id": {
+              "value": "DEED-0014",
+              "start": 72,
+              "end": 81
+            },
+            "county_raw": {
+              "value": "Santa Clara",
+              "start": 90,
+              "end": 101
+            },
+            "date_signed": {
+              "value": "2024-01-01",
+              "start": 127,
+              "end": 137
+            },
+            "date_recorded": {
+              "value": "2024-01-02",
+              "start": 153,
+              "end": 163
+            },
+            "amount_digits": {
+              "value": "$100,000.00",
+              "start": 206,
+              "end": 217
+            },
+            "amount_words": {
+              "value": "One Hundred One Thousand Dollars",
+              "start": 219,
+              "end": 251
+            },
+            "currency": null
+          },
+          "langextract_raw_extractions": [
+            {
+              "class": "doc_id",
+              "text": "DEED-0014",
+              "start": 72,
+              "end": 81,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "county",
+              "text": "Santa Clara",
+              "start": 90,
+              "end": 101,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "state",
+              "text": "CA",
+              "start": 111,
+              "end": 113,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "date_signed",
+              "text": "2024-01-01",
+              "start": 127,
+              "end": 137,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "date_recorded",
+              "text": "2024-01-02",
+              "start": 153,
+              "end": 163,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "grantor",
+              "text": "Example LLC",
+              "start": 262,
+              "end": 273,
+              "alignment_status": "match_fuzzy",
+              "attributes": {}
+            },
+            {
+              "class": "grantee",
+              "text": "Alice Example",
+              "start": 283,
+              "end": 296,
+              "alignment_status": "match_fuzzy",
+              "attributes": {}
+            },
+            {
+              "class": "amount_digits",
+              "text": "$100,000.00",
+              "start": 206,
+              "end": 217,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "amount_words",
+              "text": "One Hundred One Thousand Dollars",
+              "start": 219,
+              "end": 251,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "apn",
+              "text": "111-111-AL",
+              "start": 302,
+              "end": 312,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "status",
+              "text": "FINAL",
+              "start": 321,
+              "end": 326,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            }
+          ],
+          "county_loopback_candidates": null,
+          "loopback_analysis": {
+            "date_ambiguity": null,
+            "amount_ambiguity": {
+              "candidates": [
+                {
+                  "amount": "100000.00",
+                  "currency": null
+                },
+                {
+                  "amount": "100000.00",
+                  "currency": "USD"
+                },
+                {
+                  "amount": "200000.00",
+                  "currency": "USD"
+                }
+              ]
+            },
+            "currency_mentions": [
+              "USD"
+            ]
+          },
+          "loopback_raw": {
+            "candidate_dates": [
+              {
+                "class": "date_mention",
+                "text": "2024-01-01",
+                "start": 127,
+                "end": 137,
+                "alignment_status": "match_exact",
+                "attributes": {
+                  "kind": "signed",
+                  "raw_line_hint": "Date Signed"
+                }
+              },
+              {
+                "class": "date_mention",
+                "text": "2024-01-02",
+                "start": 153,
+                "end": 163,
+                "alignment_status": "match_exact",
+                "attributes": {
+                  "kind": "recorded",
+                  "raw_line_hint": "Date Recorded"
+                }
+              }
+            ],
+            "candidate_amounts": [
+              {
+                "class": "amount_digits",
+                "text": "$200,000.00",
+                "start": 185,
+                "end": 196,
+                "alignment_status": "match_exact",
+                "attributes": {}
+              },
+              {
+                "class": "currency",
+                "text": "$",
+                "start": 185,
+                "end": 186,
+                "alignment_status": "match_fuzzy",
+                "attributes": {}
+              },
+              {
+                "class": "amount_digits",
+                "text": "$100,000.00",
+                "start": 206,
+                "end": 217,
+                "alignment_status": "match_exact",
+                "attributes": {}
+              },
+              {
+                "class": "amount_digits",
+                "text": "100,000.00",
+                "start": 207,
+                "end": 217,
+                "alignment_status": "match_fuzzy",
+                "attributes": {}
+              },
+              {
+                "class": "currency",
+                "text": "$",
+                "start": 185,
+                "end": 186,
+                "alignment_status": "match_fuzzy",
+                "attributes": {}
+              },
+              {
+                "class": "amount_words",
+                "text": "One Hundred One Thousand Dollars",
+                "start": 219,
+                "end": 251,
+                "alignment_status": "match_exact",
+                "attributes": {}
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "index": 13,
+      "doc": {
+        "status": "FAIL",
+        "failures": {
+          "amounts": [
+            {
+              "code": "AMOUNT_MISMATCH_ERROR",
+              "severity": "error",
+              "summary": "Digit amount does not match written amount.",
+              "details": "System cannot safely choose which one is correct without review.",
+              "fields": [
+                "amount_digits",
+                "amount_words"
+              ],
+              "evidence": {
+                "digits": "100000.00",
+                "words": "101000",
+                "difference": "-1000.00"
+              }
+            },
+            {
+              "code": "AMBIGUOUS_AMOUNT",
+              "severity": "warning",
+              "summary": "Multiple digit-amount candidates detected.",
+              "details": "Requires review to confirm which amount is authoritative.",
+              "fields": [
+                "amount_digits"
+              ],
+              "evidence": {
+                "candidates": [
+                  {
+                    "amount": "100000.00",
+                    "currency": "USD"
+                  },
+                  {
+                    "amount": "50000",
+                    "currency": "EUR"
+                  }
+                ]
+              }
+            },
+            {
+              "code": "AMBIGUOUS_CURRENCY",
+              "severity": "warning",
+              "summary": "Multiple different currency mentions detected.",
+              "details": "Requires review to confirm currency.",
+              "fields": [
+                "currency"
+              ],
+              "evidence": {
+                "mentions": [
+                  "EUR",
+                  "USD"
+                ]
+              }
+            }
+          ]
+        },
+        "extracted": {
+          "doc_id": "DEED-0015",
+          "county": "Santa Clara",
+          "state": "CA",
+          "date_signed": "2024-01-01",
+          "date_recorded": "2024-01-02",
+          "grantor": "Example LLC",
+          "grantee": "Alice Example",
+          "amount_digits": "$100,000.00 USD",
+          "amount_words": "One Hundred One Thousand Dollars",
+          "currency": "USD",
+          "apn": "111-111-AM",
+          "status": "FINAL",
+          "tax_rate": 0.012
+        },
+        "unknown_fields": {},
+        "audit": {
+          "presence": {
+            "doc_id": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "DEED-0015"
+            },
+            "county": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "Santa Clara"
+            },
+            "state": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "CA"
+            },
+            "date_signed": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "2024-01-01"
+            },
+            "date_recorded": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "2024-01-02"
+            },
+            "grantor": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "Example LLC"
+            },
+            "grantee": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "Alice Example"
+            },
+            "apn": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "111-111-AM"
+            },
+            "status": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "FINAL"
+            },
+            "amount_digits": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "$100,000.00 USD"
+            },
+            "amount_words": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "One Hundred One Thousand Dollars"
+            },
+            "currency": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "USD"
+            }
+          },
+          "county_resolution": {
+            "expansion_attempted": false,
+            "expansion_candidates": [],
+            "expansion_best_candidate": null,
+            "matched_county": "Santa Clara",
+            "match_score": 100.0
+          },
+          "spans": {
+            "doc_id": {
+              "value": "DEED-0015",
+              "start": 74,
+              "end": 83
+            },
+            "county_raw": {
+              "value": "Santa Clara",
+              "start": 92,
+              "end": 103
+            },
+            "date_signed": {
+              "value": "2024-01-01",
+              "start": 129,
+              "end": 139
+            },
+            "date_recorded": {
+              "value": "2024-01-02",
+              "start": 155,
+              "end": 165
+            },
+            "amount_digits": {
+              "value": "$100,000.00 USD",
+              "start": 174,
+              "end": 189
+            },
+            "amount_words": {
+              "value": "One Hundred One Thousand Dollars",
+              "start": 191,
+              "end": 223
+            },
+            "currency": {
+              "value": "USD",
+              "start": 186,
+              "end": 189
+            }
+          },
+          "langextract_raw_extractions": [
+            {
+              "class": "doc_id",
+              "text": "DEED-0015",
+              "start": 74,
+              "end": 83,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "county",
+              "text": "Santa Clara",
+              "start": 92,
+              "end": 103,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "state",
+              "text": "CA",
+              "start": 113,
+              "end": 115,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "date_signed",
+              "text": "2024-01-01",
+              "start": 129,
+              "end": 139,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "date_recorded",
+              "text": "2024-01-02",
+              "start": 155,
+              "end": 165,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "amount_digits",
+              "text": "$100,000.00 USD",
+              "start": 174,
+              "end": 189,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "amount_words",
+              "text": "One Hundred One Thousand Dollars",
+              "start": 191,
+              "end": 223,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "currency",
+              "text": "USD",
+              "start": 186,
+              "end": 189,
+              "alignment_status": "match_fuzzy",
+              "attributes": {}
+            },
+            {
+              "class": "grantor",
+              "text": "Example LLC",
+              "start": 263,
+              "end": 274,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "grantee",
+              "text": "Alice Example",
+              "start": 284,
+              "end": 297,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "apn",
+              "text": "111-111-AM",
+              "start": 303,
+              "end": 313,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "status",
+              "text": "FINAL",
+              "start": 322,
+              "end": 327,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            }
+          ],
+          "county_loopback_candidates": null,
+          "loopback_analysis": {
+            "date_ambiguity": null,
+            "amount_ambiguity": {
+              "candidates": [
+                {
+                  "amount": "100000.00",
+                  "currency": "USD"
+                },
+                {
+                  "amount": "50000",
+                  "currency": "EUR"
+                }
+              ]
+            },
+            "currency_mentions": [
+              "EUR",
+              "USD"
+            ]
+          },
+          "loopback_raw": {
+            "candidate_dates": [
+              {
+                "class": "date_mention",
+                "text": "2024-01-01",
+                "start": 129,
+                "end": 139,
+                "alignment_status": "match_exact",
+                "attributes": {
+                  "kind": "signed",
+                  "raw_line_hint": "Date Signed"
+                }
+              },
+              {
+                "class": "date_mention",
+                "text": "2024-01-02",
+                "start": 155,
+                "end": 165,
+                "alignment_status": "match_exact",
+                "attributes": {
+                  "kind": "recorded",
+                  "raw_line_hint": "Date Recorded"
+                }
+              }
+            ],
+            "candidate_amounts": [
+              {
+                "class": "amount_digits",
+                "text": "$100,000.00 USD",
+                "start": 174,
+                "end": 189,
+                "alignment_status": "match_exact",
+                "attributes": {}
+              },
+              {
+                "class": "currency",
+                "text": "USD",
+                "start": 186,
+                "end": 189,
+                "alignment_status": "match_fuzzy",
+                "attributes": {}
+              },
+              {
+                "class": "amount_words",
+                "text": "One Hundred One Thousand Dollars",
+                "start": 191,
+                "end": 223,
+                "alignment_status": "match_exact",
+                "attributes": {}
+              },
+              {
+                "class": "amount_digits",
+                "text": "50,000 EUR",
+                "start": 242,
+                "end": 252,
+                "alignment_status": "match_exact",
+                "attributes": {}
+              },
+              {
+                "class": "currency",
+                "text": "EUR",
+                "start": 249,
+                "end": 252,
+                "alignment_status": "match_fuzzy",
+                "attributes": {}
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "index": 14,
+      "doc": {
+        "status": "FAIL",
+        "failures": {
+          "identity": [
+            {
+              "code": "COUNTY_EXPANSION_NOT_IN_REFERENCE",
+              "severity": "error",
+              "summary": "County expansion candidate(s) were not found in counties.json.",
+              "details": "LLM suggested an expanded/normalized county name, but no match exists in reference data (fail-closed).",
+              "fields": [
+                "county"
+              ],
+              "evidence": {
+                "county_raw": "S. Barbara",
+                "expansion_candidates": [
+                  "S. Barbara",
+                  "Santa Barbara"
+                ]
+              }
+            }
+          ]
+        },
+        "extracted": {
+          "doc_id": "DEED-0016",
+          "state": "CA",
+          "date_signed": "2024-01-01",
+          "date_recorded": "2024-01-02",
+          "grantor": "Example LLC",
+          "grantee": "Alice Example",
+          "amount_digits": "$100,000.00",
+          "amount_words": "One Hundred Thousand Dollars",
+          "currency": "USD",
+          "apn": "111-111-AN",
+          "status": "FINAL"
+        },
+        "unknown_fields": {},
+        "audit": {
+          "presence": {
+            "doc_id": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "DEED-0016"
+            },
+            "county": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "S. Barbara"
+            },
+            "state": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "CA"
+            },
+            "date_signed": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "2024-01-01"
+            },
+            "date_recorded": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "2024-01-02"
+            },
+            "grantor": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "Example LLC"
+            },
+            "grantee": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "Alice Example"
+            },
+            "apn": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "111-111-AN"
+            },
+            "status": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "FINAL"
+            },
+            "amount_digits": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "$100,000.00"
+            },
+            "amount_words": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "One Hundred Thousand Dollars"
+            },
+            "currency": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "USD"
+            }
+          },
+          "county_resolution": {
+            "expansion_attempted": true,
+            "expansion_candidates": [
+              "S. Barbara",
+              "Santa Barbara"
+            ],
+            "expansion_best_candidate": null,
+            "matched_county": null,
+            "match_score": null
+          },
+          "spans": {
+            "doc_id": {
+              "value": "DEED-0016",
+              "start": 71,
+              "end": 80
+            },
+            "county_raw": {
+              "value": "S. Barbara",
+              "start": 89,
+              "end": 99
+            },
+            "date_signed": {
+              "value": "2024-01-01",
+              "start": 125,
+              "end": 135
+            },
+            "date_recorded": {
+              "value": "2024-01-02",
+              "start": 151,
+              "end": 161
+            },
+            "amount_digits": {
+              "value": "$100,000.00",
+              "start": 214,
+              "end": 225
+            },
+            "amount_words": {
+              "value": "One Hundred Thousand Dollars",
+              "start": 227,
+              "end": 255
+            },
+            "currency": null
+          },
+          "langextract_raw_extractions": [
+            {
+              "class": "doc_id",
+              "text": "DEED-0016",
+              "start": 71,
+              "end": 80,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "county",
+              "text": "S. Barbara",
+              "start": 89,
+              "end": 99,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "state",
+              "text": "CA",
+              "start": 109,
+              "end": 111,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "date_signed",
+              "text": "2024-01-01",
+              "start": 125,
+              "end": 135,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "date_recorded",
+              "text": "2024-01-02",
+              "start": 151,
+              "end": 161,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "grantor",
+              "text": "Example LLC",
+              "start": 171,
+              "end": 182,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "grantee",
+              "text": "Alice Example",
+              "start": 192,
+              "end": 205,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "amount_digits",
+              "text": "$100,000.00",
+              "start": 214,
+              "end": 225,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "amount_words",
+              "text": "One Hundred Thousand Dollars",
+              "start": 227,
+              "end": 255,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "apn",
+              "text": "111-111-AN",
+              "start": 262,
+              "end": 272,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "status",
+              "text": "FINAL",
+              "start": 281,
+              "end": 286,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            }
+          ],
+          "county_loopback_candidates": [
+            {
+              "class": "county_mention",
+              "text": "S. Barbara",
+              "start": 89,
+              "end": 99,
+              "alignment_status": "match_exact",
+              "attributes": {
+                "normalized_candidate": "Santa Barbara",
+                "raw_line_hint": "County"
+              }
+            }
+          ],
+          "loopback_analysis": {
+            "date_ambiguity": null,
+            "amount_ambiguity": null,
+            "currency_mentions": [
+              "USD"
+            ]
+          },
+          "loopback_raw": {
+            "candidate_dates": [
+              {
+                "class": "date_mention",
+                "text": "2024-01-01",
+                "start": 125,
+                "end": 135,
+                "alignment_status": "match_exact",
+                "attributes": {
+                  "kind": "signed",
+                  "raw_line_hint": "Date Signed"
+                }
+              },
+              {
+                "class": "date_mention",
+                "text": "2024-01-02",
+                "start": 151,
+                "end": 161,
+                "alignment_status": "match_exact",
+                "attributes": {
+                  "kind": "recorded",
+                  "raw_line_hint": "Date Recorded"
+                }
+              }
+            ],
+            "candidate_amounts": [
+              {
+                "class": "amount_digits",
+                "text": "$100,000.00",
+                "start": 214,
+                "end": 225,
+                "alignment_status": "match_exact",
+                "attributes": {}
+              },
+              {
+                "class": "currency",
+                "text": "$",
+                "start": 214,
+                "end": 215,
+                "alignment_status": "match_fuzzy",
+                "attributes": {}
+              },
+              {
+                "class": "amount_words",
+                "text": "One Hundred Thousand Dollars",
+                "start": 227,
+                "end": 255,
+                "alignment_status": "match_exact",
+                "attributes": {}
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "index": 15,
+      "doc": {
+        "status": "PASS",
+        "failures": {},
+        "extracted": {
+          "doc_id": "DEED-0017",
+          "county": "San Mateo",
+          "county_raw": "Sn Mt\u00e9o",
+          "state": "CA",
+          "date_signed": "2024-01-01",
+          "date_recorded": "2024-01-02",
+          "grantor": "Example LLC",
+          "grantee": "Alice Example",
+          "amount_digits": "$100,000.00",
+          "amount_words": "One Hundred Thousand Dollars",
+          "currency": "USD",
+          "apn": "111-111-AO",
+          "status": "FINAL",
+          "tax_rate": 0.011
+        },
+        "unknown_fields": {},
+        "audit": {
+          "presence": {
+            "doc_id": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "DEED-0017"
+            },
+            "county": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "Sn Mt\u00e9o"
+            },
+            "state": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "CA"
+            },
+            "date_signed": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "2024-01-01"
+            },
+            "date_recorded": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "2024-01-02"
+            },
+            "grantor": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "Example LLC"
+            },
+            "grantee": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "Alice Example"
+            },
+            "apn": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "111-111-AO"
+            },
+            "status": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "FINAL"
+            },
+            "amount_digits": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "$100,000.00"
+            },
+            "amount_words": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "One Hundred Thousand Dollars"
+            },
+            "currency": {
+              "status": "PRESENT_WITH_VALUE",
+              "raw_value": "USD"
+            }
+          },
+          "county_resolution": {
+            "expansion_attempted": true,
+            "expansion_candidates": [
+              "San Mateo",
+              "Sn Mt\u00e9o"
+            ],
+            "expansion_best_candidate": "San Mateo",
+            "matched_county": "San Mateo",
+            "match_score": 100.0
+          },
+          "spans": {
+            "doc_id": {
+              "value": "DEED-0017",
+              "start": 64,
+              "end": 73
+            },
+            "county_raw": {
+              "value": "Sn Mt\u00e9o",
+              "start": 82,
+              "end": 89
+            },
+            "date_signed": {
+              "value": "2024-01-01",
+              "start": 115,
+              "end": 125
+            },
+            "date_recorded": {
+              "value": "2024-01-02",
+              "start": 141,
+              "end": 151
+            },
+            "amount_digits": {
+              "value": "$100,000.00",
+              "start": 204,
+              "end": 215
+            },
+            "amount_words": {
+              "value": "One Hundred Thousand Dollars",
+              "start": 217,
+              "end": 245
+            },
+            "currency": null
+          },
+          "langextract_raw_extractions": [
+            {
+              "class": "doc_id",
+              "text": "DEED-0017",
+              "start": 64,
+              "end": 73,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "county",
+              "text": "Sn Mt\u00e9o",
+              "start": 82,
+              "end": 89,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "state",
+              "text": "CA",
+              "start": 99,
+              "end": 101,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "date_signed",
+              "text": "2024-01-01",
+              "start": 115,
+              "end": 125,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "date_recorded",
+              "text": "2024-01-02",
+              "start": 141,
+              "end": 151,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "grantor",
+              "text": "Example LLC",
+              "start": 161,
+              "end": 172,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "grantee",
+              "text": "Alice Example",
+              "start": 182,
+              "end": 195,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "amount_digits",
+              "text": "$100,000.00",
+              "start": 204,
+              "end": 215,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "amount_words",
+              "text": "One Hundred Thousand Dollars",
+              "start": 217,
+              "end": 245,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "apn",
+              "text": "111-111-AO",
+              "start": 252,
+              "end": 262,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            },
+            {
+              "class": "status",
+              "text": "FINAL",
+              "start": 271,
+              "end": 276,
+              "alignment_status": "match_exact",
+              "attributes": {}
+            }
+          ],
+          "county_loopback_candidates": [
+            {
+              "class": "county_mention",
+              "text": "Sn Mt\u00e9o",
+              "start": 82,
+              "end": 89,
+              "alignment_status": "match_exact",
+              "attributes": {
+                "normalized_candidate": "San Mateo",
+                "raw_line_hint": "County"
+              }
+            }
+          ],
+          "loopback_analysis": {
+            "date_ambiguity": null,
+            "amount_ambiguity": null,
+            "currency_mentions": [
+              "USD"
+            ]
+          },
+          "loopback_raw": {
+            "candidate_dates": [
+              {
+                "class": "date_mention",
+                "text": "2024-01-01",
+                "start": 115,
+                "end": 125,
+                "alignment_status": "match_exact",
+                "attributes": {
+                  "kind": "signed",
+                  "raw_line_hint": "Date Signed"
+                }
+              },
+              {
+                "class": "date_mention",
+                "text": "2024-01-02",
+                "start": 141,
+                "end": 151,
+                "alignment_status": "match_exact",
+                "attributes": {
+                  "kind": "recorded",
+                  "raw_line_hint": "Date Recorded"
+                }
+              }
+            ],
+            "candidate_amounts": [
+              {
+                "class": "amount_digits",
+                "text": "$100,000.00",
+                "start": 204,
+                "end": 215,
+                "alignment_status": "match_exact",
+                "attributes": {}
+              },
+              {
+                "class": "currency",
+                "text": "$",
+                "start": 204,
+                "end": 205,
+                "alignment_status": "match_fuzzy",
+                "attributes": {}
+              },
+              {
+                "class": "amount_words",
+                "text": "One Hundred Thousand Dollars",
+                "start": 217,
+                "end": 245,
+                "alignment_status": "match_exact",
+                "attributes": {}
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

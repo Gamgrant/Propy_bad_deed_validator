@@ -1,0 +1,299 @@
+[
+    {
+      "name": "BASELINE_DATE_AND_AMOUNT_MISMATCH",
+      "expect_doc_status": "FAIL",
+      "expect_extracted": {
+        "doc_id": "DEED-TRUST-0042",
+        "county": "Santa Clara",
+        "state": "CA",
+        "date_signed": "2024-01-15",
+        "date_recorded": "2024-01-10",
+        "apn": "992-001-XA",
+        "currency": "USD",
+        "tax_rate": 0.012
+      },
+      "expect_failures": [
+        {
+          "group": "dates",
+          "code": "DATE_ORDER_ERROR",
+          "fields": ["date_recorded", "date_signed"],
+          "evidence": {
+            "date_signed": "2024-01-15",
+            "date_recorded": "2024-01-10"
+          }
+        },
+        {
+          "group": "amounts",
+          "code": "AMOUNT_MISMATCH_ERROR",
+          "fields": ["amount_digits", "amount_words"],
+          "evidence": {
+            "digits": "1250000.00",
+            "words": "1200000"
+          }
+        }
+      ]
+    },
+  
+    {
+      "name": "REQUIRED_AMOUNT_LABEL_ABSENT",
+      "expect_doc_status": "FAIL",
+      "expect_extracted": {
+        "doc_id": "DEED-0003",
+        "county": "Santa Clara",
+        "state": "CA",
+        "date_signed": "2024-01-01",
+        "date_recorded": "2024-01-02",
+        "apn": "111-111-AA",
+        "tax_rate": 0.012
+      },
+      "expect_failures": [
+        { "group": "presence", "code": "FIELD_ABSENT", "fields": ["amount_digits"], "evidence": { "field": "amount_digits" } },
+        { "group": "presence", "code": "FIELD_ABSENT", "fields": ["amount_words"], "evidence": { "field": "amount_words" } }
+      ]
+    },
+  
+    {
+      "name": "REQUIRED_AMOUNT_PRESENT_EMPTY",
+      "expect_doc_status": "FAIL",
+      "expect_extracted": {
+        "doc_id": "DEED-0004",
+        "county": "Santa Clara",
+        "state": "CA",
+        "date_signed": "2024-01-01",
+        "date_recorded": "2024-01-02",
+        "apn": "111-111-AB",
+        "tax_rate": 0.012
+      },
+      "expect_failures": [
+        { "group": "presence", "code": "FIELD_PRESENT_EMPTY", "fields": ["amount_digits"], "evidence": { "field": "amount_digits" } },
+        { "group": "presence", "code": "FIELD_PRESENT_EMPTY", "fields": ["amount_words"], "evidence": { "field": "amount_words" } }
+      ]
+    },
+  
+    {
+      "name": "COUNTY_UNKNOWN",
+      "expect_doc_status": "FAIL",
+      "expect_extracted": {
+        "doc_id": "DEED-0005",
+        "state": "CA",
+        "date_signed": "2024-01-01",
+        "date_recorded": "2024-01-02",
+        "apn": "111-111-AC",
+        "currency": "USD"
+      },
+      "expect_failures": [
+        { "group": "identity", "code": "COUNTY_EXPANSION_NOT_IN_REFERENCE", "fields": ["county"] }
+      ]
+    },
+  
+    {
+      "name": "COUNTY_PRESENT_EMPTY",
+      "expect_doc_status": "FAIL",
+      "expect_extracted": {
+        "doc_id": "DEED-0006",
+        "date_signed": "2024-01-01",
+        "date_recorded": "2024-01-02",
+        "apn": "111-111-AD",
+        "currency": "USD"
+      },
+      "expect_failures": [
+        { "group": "presence", "code": "FIELD_PRESENT_EMPTY", "fields": ["county"], "evidence": { "field": "county" } },
+        { "group": "presence", "code": "FIELD_PRESENT_EMPTY", "fields": ["state"], "evidence": { "field": "state" } }
+      ]
+    },
+  
+    {
+      "name": "DATE_PARSE_ERROR",
+      "expect_doc_status": "FAIL",
+      "expect_extracted": {
+        "doc_id": "DEED-0007",
+        "county": "Santa Clara",
+        "state": "CA",
+        "date_recorded": "2024-01-16",
+        "apn": "111-111-AE",
+        "currency": "USD",
+        "tax_rate": 0.012
+      },
+      "expect_failures": [
+        { "group": "dates", "code": "DATE_PARSE_ERROR", "fields": ["date_signed"], "evidence": { "date_signed_raw": "01/15/2024" } }
+      ]
+    },
+  
+    {
+      "name": "DATE_UNREASONABLE_TOO_OLD",
+      "expect_doc_status": "FAIL",
+      "expect_extracted": {
+        "doc_id": "DEED-0008",
+        "county": "Santa Clara",
+        "state": "CA",
+        "date_signed": "1800-01-01",
+        "date_recorded": "1800-01-02",
+        "apn": "111-111-AF",
+        "currency": "USD",
+        "tax_rate": 0.012
+      },
+      "expect_failures": [
+        { "group": "dates", "code": "DATE_UNREASONABLE", "fields": ["date_signed"] },
+        { "group": "dates", "code": "DATE_UNREASONABLE", "fields": ["date_recorded"] }
+      ]
+    },
+  
+    {
+      "name": "DATE_UNREASONABLE_TOO_FUTURE",
+      "expect_doc_status": "FAIL",
+      "expect_extracted": {
+        "doc_id": "DEED-0009",
+        "county": "Santa Clara",
+        "state": "CA",
+        "date_signed": "2099-01-01",
+        "date_recorded": "2099-01-02",
+        "apn": "111-111-AG",
+        "currency": "USD",
+        "tax_rate": 0.012
+      },
+      "expect_failures": [
+        { "group": "dates", "code": "DATE_UNREASONABLE", "fields": ["date_signed"] },
+        { "group": "dates", "code": "DATE_UNREASONABLE", "fields": ["date_recorded"] }
+      ]
+    },
+  
+    {
+      "name": "AMOUNT_DIGITS_PARSE_ERROR",
+      "expect_doc_status": "FAIL",
+      "expect_extracted": {
+        "doc_id": "DEED-0010",
+        "county": "Santa Clara",
+        "state": "CA",
+        "date_signed": "2024-01-01",
+        "date_recorded": "2024-01-02",
+        "apn": "111-111-AH",
+        "tax_rate": 0.012
+      },
+      "expect_failures": [
+        { "group": "amounts", "code": "AMOUNT_DIGITS_PARSE_ERROR", "fields": ["amount_digits"], "evidence": { "amount_digits_raw": "$12O,000.00" } }
+      ]
+    },
+  
+    {
+      "name": "AMOUNT_WORDS_PARSE_ERROR",
+      "expect_doc_status": "FAIL",
+      "expect_extracted": {
+        "doc_id": "DEED-0011",
+        "county": "Santa Clara",
+        "state": "CA",
+        "date_signed": "2024-01-01",
+        "date_recorded": "2024-01-02",
+        "apn": "111-111-AI",
+        "currency": "USD",
+        "tax_rate": 0.012
+      },
+      "expect_failures": [
+        { "group": "amounts", "code": "AMOUNT_WORDS_PARSE_ERROR", "fields": ["amount_words"], "evidence": { "amount_words_raw": "One Hundred Twenty Thousand Dollazzz" } }
+      ]
+    },
+  
+    {
+      "name": "CURRENCY_MISMATCH",
+      "expect_doc_status": "FAIL",
+      "expect_extracted": {
+        "doc_id": "DEED-0012",
+        "county": "Santa Clara",
+        "state": "CA",
+        "date_signed": "2024-01-01",
+        "date_recorded": "2024-01-02",
+        "apn": "111-111-AJ",
+        "tax_rate": 0.012
+      },
+      "expect_failures": [
+        { "group": "amounts", "code": "CURRENCY_MISMATCH", "fields": ["amount_digits", "amount_words", "currency"] }
+      ]
+    },
+  
+    {
+      "name": "AMBIGUOUS_DATE_WARNING_PLUS_FAIL",
+      "expect_doc_status": "FAIL",
+      "expect_extracted": {
+        "doc_id": "DEED-0013",
+        "county": "Santa Clara",
+        "state": "CA",
+        "date_signed": "2024-01-01",
+        "date_recorded": "2024-01-02",
+        "apn": "111-111-AK",
+        "currency": "USD",
+        "tax_rate": 0.012
+      },
+      "expect_failures": [
+        { "group": "dates", "code": "AMBIGUOUS_DATE", "fields": ["date_signed", "date_recorded"] },
+        { "group": "amounts", "code": "AMOUNT_MISMATCH_ERROR", "fields": ["amount_digits", "amount_words"] }
+      ]
+    },
+  
+    {
+      "name": "AMBIGUOUS_AMOUNT_WARNING_PLUS_FAIL",
+      "expect_doc_status": "FAIL",
+      "expect_extracted": {
+        "doc_id": "DEED-0014",
+        "county": "Santa Clara",
+        "state": "CA",
+        "date_signed": "2024-01-01",
+        "date_recorded": "2024-01-02",
+        "apn": "111-111-AL",
+        "currency": "USD",
+        "tax_rate": 0.012
+      },
+      "expect_failures": [
+        { "group": "amounts", "code": "AMBIGUOUS_AMOUNT", "fields": ["amount_digits"] },
+        { "group": "amounts", "code": "AMOUNT_MISMATCH_ERROR", "fields": ["amount_digits", "amount_words"] }
+      ]
+    },
+  
+    {
+      "name": "AMBIGUOUS_CURRENCY_WARNING_PLUS_FAIL",
+      "expect_doc_status": "FAIL",
+      "expect_extracted": {
+        "doc_id": "DEED-0015",
+        "county": "Santa Clara",
+        "state": "CA",
+        "date_signed": "2024-01-01",
+        "date_recorded": "2024-01-02",
+        "apn": "111-111-AM",
+        "currency": "USD",
+        "tax_rate": 0.012
+      },
+      "expect_failures": [
+        { "group": "amounts", "code": "AMBIGUOUS_CURRENCY", "fields": ["currency"] },
+        { "group": "amounts", "code": "AMOUNT_MISMATCH_ERROR", "fields": ["amount_digits", "amount_words"] }
+      ]
+    },
+  
+    {
+      "name": "COUNTY_EXPANSION_NOT_IN_REFERENCE",
+      "expect_doc_status": "FAIL",
+      "expect_extracted": {
+        "doc_id": "DEED-0016",
+        "state": "CA",
+        "date_signed": "2024-01-01",
+        "date_recorded": "2024-01-02",
+        "apn": "111-111-AN",
+        "currency": "USD"
+      },
+      "expect_failures": [
+        { "group": "identity", "code": "COUNTY_EXPANSION_NOT_IN_REFERENCE", "fields": ["county"], "evidence": { "county_raw": "S. Barbara" } }
+      ]
+    },
+    {
+        "name": "COUNTY_FUZZY_MATCH_SUCCESS",
+        "expect_doc_status": "PASS",
+        "expect_extracted": {
+          "doc_id": "DEED-0017",
+          "county": "San Mateo",
+          "state": "CA",
+          "date_signed": "2024-01-01",
+          "date_recorded": "2024-01-02",
+          "apn": "111-111-AO",
+          "currency": "USD",
+          "tax_rate": 0.011
+        },
+        "expect_failures": []
+      }
+  ]

@@ -1,0 +1,12 @@
+[
+    { "name": "Santa Clara", "tax_rate": 0.012 },
+    { "name": "San Mateo", "tax_rate": 0.011 },
+    { "name": "Santa Cruz", "tax_rate": 0.010 },
+  
+    { "name": "Los Angeles", "tax_rate": 0.013 },
+    { "name": "San Diego", "tax_rate": 0.0125 },
+    { "name": "Orange", "tax_rate": 0.0122 },
+  
+    { "name": "Saint Clara", "tax_rate": 0.099 }
+  ]
+  

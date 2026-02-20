@@ -1,0 +1,93 @@
+{
+  "matched": 16,
+  "mismatched": 0,
+  "total": 16,
+  "pass_rate": 1.0,
+  "doc_pass": 1,
+  "doc_fail": 15,
+  "doc_total": 16,
+  "doc_pass_rate": 0.0625,
+  "details": [
+    {
+      "name": "BASELINE_DATE_AND_AMOUNT_MISMATCH",
+      "ok": true,
+      "problems": []
+    },
+    {
+      "name": "REQUIRED_AMOUNT_LABEL_ABSENT",
+      "ok": true,
+      "problems": []
+    },
+    {
+      "name": "REQUIRED_AMOUNT_PRESENT_EMPTY",
+      "ok": true,
+      "problems": []
+    },
+    {
+      "name": "COUNTY_UNKNOWN",
+      "ok": true,
+      "problems": []
+    },
+    {
+      "name": "COUNTY_PRESENT_EMPTY",
+      "ok": true,
+      "problems": []
+    },
+    {
+      "name": "DATE_PARSE_ERROR",
+      "ok": true,
+      "problems": []
+    },
+    {
+      "name": "DATE_UNREASONABLE_TOO_OLD",
+      "ok": true,
+      "problems": []
+    },
+    {
+      "name": "DATE_UNREASONABLE_TOO_FUTURE",
+      "ok": true,
+      "problems": []
+    },
+    {
+      "name": "AMOUNT_DIGITS_PARSE_ERROR",
+      "ok": true,
+      "problems": []
+    },
+    {
+      "name": "AMOUNT_WORDS_PARSE_ERROR",
+      "ok": true,
+      "problems": []
+    },
+    {
+      "name": "CURRENCY_MISMATCH",
+      "ok": true,
+      "problems": []
+    },
+    {
+      "name": "AMBIGUOUS_DATE_WARNING_PLUS_FAIL",
+      "ok": true,
+      "problems": []
+    },
+    {
+      "name": "AMBIGUOUS_AMOUNT_WARNING_PLUS_FAIL",
+      "ok": true,
+      "problems": []
+    },
+    {
+      "name": "AMBIGUOUS_CURRENCY_WARNING_PLUS_FAIL",
+      "ok": true,
+      "problems": []
+    },
+    {
+      "name": "COUNTY_EXPANSION_NOT_IN_REFERENCE",
+      "ok": true,
+      "problems": []
+    },
+    {
+      "name": "COUNTY_FUZZY_MATCH_SUCCESS",
+      "ok": true,
+      "problems": []
+    }
+  ],
+  "output_file": "output.json"
+}
