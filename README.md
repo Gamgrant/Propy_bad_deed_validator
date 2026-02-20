@@ -55,13 +55,37 @@ A fail-closed pipeline that extracts deed fields from OCR text, enriches them wi
 
 ---
 
-## Requirements
+## Setup
+
+Use a virtual environment so dependencies are isolated from the system Python:
+
+```bash
+# Create and activate venv
+python -m venv venv
+
+# Linux / macOS
+source venv/bin/activate
+
+# Windows (cmd)
+venv\Scripts\activate.bat
+
+# Windows (PowerShell)
+venv\Scripts\Activate.ps1
+```
+
+Then install dependencies and set your API key:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-> **Required for pipeline and unit tests:** Set `OPENAI_API_KEY` or `openAI_API_key` in your environment (e.g. via `.env`).
+Create a `.env` file in the project root with `OPENAI_API_KEY=sk-...` (or export the variable in your shell).
+
+**Quick run (Unix/macOS):** One command to create venv, install, and run the pipeline with default input:
+
+```bash
+python -m venv venv && . venv/bin/activate && pip install -r requirements.txt && python deed_pipeline.py
+```
 
 ---
 

@@ -2,6 +2,11 @@
 from __future__ import annotations
 
 import argparse
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass
 import json
 import logging
 import os
